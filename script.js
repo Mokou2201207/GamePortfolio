@@ -6,6 +6,18 @@ function scrollToSection(sectionId) {
     }
 }
 
+// スキルの展開/折りたたみ
+function toggleSkills() {
+    const grid = document.getElementById('skills-grid');
+    const btn = document.getElementById('expand-skills-btn');
+    grid.classList.toggle('skills-expanded');
+    if (grid.classList.contains('skills-expanded')) {
+        btn.textContent = '\u25b2 とじる';
+    } else {
+        btn.textContent = '\u25bc もっと見る';
+    }
+}
+
 // ドラクエ風・RPG風のタイピングエフェクト
 const textToType = "「ようこそ、冒険者さん！\nここは わたしの ポートフォリオです。\nぜひ ゆっくり 見ていってくださいね。」";
 const typewriterElement = document.getElementById('typewriter-text');
