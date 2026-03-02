@@ -7,7 +7,7 @@ function scrollToSection(sectionId) {
 }
 
 // ドラクエ風・RPG風のタイピングエフェクト
-const textToType = "「よくぞきた、わかものよ！\nここは わたしの ポートフォリオだ。\nゆっくり まわって いくがよい。」";
+const textToType = "「ようこそ、冒険者さん！\nここは わたしの ポートフォリオです。\nぜひ ゆっくり 見ていってくださいね。」";
 const typewriterElement = document.getElementById('typewriter-text');
 let charIndex = 0;
 let isTyping = false;
