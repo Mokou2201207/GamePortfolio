@@ -171,24 +171,36 @@ nav {
     box-shadow: inset -5px -5px 0px rgba(0, 0, 0, 0.1);
 }
 
-.character-sprite::after,
-.character-sprite::before {
-    content: '';
+/* スライムの目 */
+.eye {
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    top: 22px;
+    border: 2px solid var(--border-color);
+    overflow: hidden;
+}
+
+.eye-left {
+    left: 14px;
+}
+
+.eye-right {
+    right: 14px;
+}
+
+.pupil {
+    width: 8px;
+    height: 8px;
     background: var(--border-color);
     border-radius: 50%;
-    top: 25px;
-    animation: blink 4s infinite;
-}
-
-.character-sprite::before {
-    left: 15px;
-}
-
-.character-sprite::after {
-    right: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
 }
 
 /* メッセージウィンドウ */

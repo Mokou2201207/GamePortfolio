@@ -38,4 +38,20 @@ window.onload = () => {
             typeWriter();
         }
     }, 800);
+
+    // スライムの目がマウスを追う
+    const pupils = document.querySelectorAll('.pupil');
+    document.addEventListener('mousemove', (e) => {
+        pupils.forEach((pupil) => {
+            const eye = pupil.parentElement;
+            const rect = eye.getBoundingClientRect();
+            const eyeCenterX = rect.left + rect.width / 2;
+            const eyeCenterY = rect.top + rect.height / 2;
+            const angle = Math.atan2(e.clientY - eyeCenterY, e.clientX - eyeCenterX);
+            const maxMove = 3;
+            const moveX = Math.cos(angle) * maxMove;
+            const moveY = Math.sin(angle) * maxMove;
+            pupil.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
+        });
+    });
 };
