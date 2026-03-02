@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Quest</title>
+    <!-- Google Fonts for Pixel/Game look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <!-- Header / Navigation -->
+        <header class="pixel-box nav-box">
+            <h1 class="logo">PLAYER 1</h1>
+            <nav>
+                <button class="nes-btn" onclick="scrollToSection('home')">HOME</button>
+                <button class="nes-btn" onclick="scrollToSection('about')">STATUS</button>
+                <button class="nes-btn" onclick="scrollToSection('skills')">MAGIC</button>
+                <button class="nes-btn" onclick="scrollToSection('works')">QUESTS</button>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section -->
+            <section id="home" class="hero pixel-box">
+                <div class="hero-content">
+                    <div class="sprite-container">
+                        <div class="character-sprite"></div>
+                    </div>
+                    <div class="message-box">
+                        <p id="typewriter-text"></p>
+                        <span class="blinking-cursor">▼</span>
+                    </div>
+                    <button class="nes-btn primary start-btn" onclick="scrollToSection('about')">PRESS START</button>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2 class="section-title">▶ STATUS</h2>
+                <div class="pixel-box status-window">
+                    <div class="avatar-box">
+                        <div class="avatar-img"></div>
+                    </div>
+                    <div class="stats-box">
+                        <p><strong>NAME:</strong> 勇者（あなたの名前）</p>
+                        <p><strong>JOB:</strong> クリエイター</p>
+                        <p><strong>LV:</strong> 25</p>
+                        <p><strong>HP:</strong> <span class="bar-bg"><span class="hp-fill"></span></span> 999/999</p>
+                        <p><strong>MP:</strong> <span class="bar-bg"><span class="mp-fill"></span></span> 120/120</p>
+                        <div class="bio-box">
+                            <p>「かわいいデザインやゲームライクなUIを作るのが大好きなクリエイターです！世界をワクワクさせるモノを作ります！」</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <h2 class="section-title">▶ MAGIC (SKILLS)</h2>
+                <div class="skills-grid">
+                    <div class="pixel-box skill-card">
+                        <div class="skill-icon" style="background: #ffccbc; color: #3e2723;">HTML</div>
+                        <h3>HTML/CSS</h3>
+                        <p>レイアウト魔法 Lv.5</p>
+                    </div>
+                    <div class="pixel-box skill-card">
+                        <div class="skill-icon" style="background: #fff9c4; color: #3e2723;">JS</div>
+                        <h3>JavaScript</h3>
+                        <p>動きの魔法 Lv.4</p>
+                    </div>
+                    <div class="pixel-box skill-card">
+                        <div class="skill-icon" style="background: #b2ebf2; color: #3e2723;">Unity</div>
+                        <h3>Unity</h3>
+                        <p>創造の魔法 Lv.3</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Works Section -->
+            <section id="works" class="section">
+                <h2 class="section-title">▶ SAVE DATA (WORKS)</h2>
+                <div class="works-list">
+                    <div class="pixel-box work-item">
+                        <div class="work-thumb">🖼 画像1</div>
+                        <div class="work-info">
+                            <h3>FILE 01: ポートフォリオ</h3>
+                            <p>プレイ時間: 10:00:00</p>
+                            <p>このかわいいゲーム風のサイトです。CSSでドット絵風のUIを表現しました。</p>
+                        </div>
+                        <button class="nes-btn">ロードする</button>
+                    </div>
+                    <div class="pixel-box work-item">
+                        <div class="work-thumb">🖼 画像2</div>
+                        <div class="work-info">
+                            <h3>FILE 02: 〇〇アプリ</h3>
+                            <p>プレイ時間: 45:30:00</p>
+                            <p>日常が楽しくなるWebアプリを作りました。</p>
+                        </div>
+                        <button class="nes-btn">ロードする</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2 class="section-title">▶ MESSAGE</h2>
+                <div class="pixel-box contact-box">
+                    <p>ギルド（連絡先）への伝言はこちらのボタンからどうぞ！</p>
+                    <div class="social-links">
+                        <button class="nes-btn">Twitter</button>
+                        <button class="nes-btn">GitHub</button>
+                        <button class="nes-btn primary">MAIL</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="pixel-box footer">
+            <p>&copy; 2026 PLAYER 1. All Rights Reserved. GAME CLEAR!</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

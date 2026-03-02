@@ -1,0 +1,450 @@
+:root {
+    --bg-color: #fce4ec;
+    /* 可愛いパステルピンク */
+    --box-bg: #ffffff;
+    --border-color: #3e2723;
+    /* こげ茶色のやさしいボーダー */
+    --text-color: #3e2723;
+    --primary-color: #ff8a80;
+    /* パステルレッド */
+    --hover-color: #ff5252;
+    --hp-color: #69f0ae;
+    /* パステルグリーン */
+    --mp-color: #40c4ff;
+    /* パステルブルー */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DotGothic16', sans-serif;
+    /* ドット絵風の可愛いフォント */
+    background-color: var(--bg-color);
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.4) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.4) 2px, transparent 2px);
+    background-size: 30px 30px;
+    /* 方眼紙・タイル風の背景 */
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ピクセル風ボックス（レトロゲーム枠） */
+.pixel-box {
+    background: var(--box-bg);
+    border: 4px solid var(--border-color);
+    border-radius: 8px;
+    /* 角を少し丸くしてかわいさをプラス */
+    padding: 20px;
+    box-shadow: 4px 4px 0px rgba(62, 39, 35, 0.2);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* ナビゲーション */
+.nav-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 10px;
+    z-index: 100;
+    background: #fffdf5;
+    /* 少しクリーム色 */
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 0px #fff, -1px -1px 0 #fff;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* レトロなボタン */
+.nes-btn {
+    font-family: 'DotGothic16', sans-serif;
+    background-color: #f5f5f5;
+    border: 3px solid var(--border-color);
+    border-radius: 6px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-color);
+    box-shadow: 2px 2px 0px var(--border-color);
+    transition: all 0.1s ease;
+}
+
+.nes-btn:hover {
+    background-color: #e0e0e0;
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--border-color);
+}
+
+.nes-btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.nes-btn.primary:hover {
+    background-color: var(--hover-color);
+}
+
+/* セクション共通 */
+.section {
+    margin: 40px 0;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 0px #fff;
+    color: var(--primary-color);
+}
+
+/* ヒーローセクション */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: #ffe0b2;
+    /* 温かみのあるオレンジ系パステル */
+}
+
+.sprite-container {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 可愛いおばけ/スライム風のキャラクター */
+.character-sprite {
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-color);
+    border: 4px solid var(--border-color);
+    border-radius: 50% 50% 20% 20%;
+    position: relative;
+    animation: float 1.5s infinite alternate ease-in-out;
+    box-shadow: inset -5px -5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.character-sprite::after,
+.character-sprite::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--border-color);
+    border-radius: 50%;
+    top: 25px;
+    animation: blink 4s infinite;
+}
+
+.character-sprite::before {
+    left: 15px;
+}
+
+.character-sprite::after {
+    right: 15px;
+}
+
+/* メッセージウィンドウ */
+.message-box {
+    background: var(--border-color);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 4px var(--border-color);
+    margin: 20px auto;
+    width: 90%;
+    min-height: 90px;
+    text-align: left;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+#typewriter-text {
+    display: inline;
+}
+
+.blinking-cursor {
+    animation: blinker 1s steps(2, start) infinite;
+    color: var(--primary-color);
+}
+
+.start-btn {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    animation: pulse 2s infinite;
+}
+
+/* ステータス画面 */
+.status-window {
+    display: flex;
+    gap: 30px;
+    background: #e1bee7;
+    /* パステルパープル */
+}
+
+.avatar-box {
+    flex-shrink: 0;
+}
+
+.avatar-img {
+    width: 120px;
+    height: 120px;
+    background: #ce93d8;
+    border: 4px solid var(--border-color);
+    border-radius: 8px;
+    background-image: radial-gradient(circle, #f3e5f5 20%, transparent 20%);
+    background-size: 20px 20px;
+}
+
+.stats-box {
+    flex-grow: 1;
+}
+
+.stats-box p {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.bar-bg {
+    display: inline-block;
+    width: 150px;
+    height: 16px;
+    background: #5d4037;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.hp-fill {
+    display: block;
+    height: 100%;
+    background: var(--hp-color);
+    width: 100%;
+}
+
+.mp-fill {
+    display: block;
+    height: 100%;
+    background: var(--mp-color);
+    width: 100%;
+}
+
+.bio-box {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px dashed var(--border-color);
+}
+
+/* スキル */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: #b2dfdb;
+    /* パステルグリーン */
+    text-align: center;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: #80cbc4;
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 4px solid var(--border-color);
+    border-radius: 50%;
+    /* 丸くしてかわいく */
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* 作品 (セーブデータ) */
+.works-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.work-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: #bbdefb;
+    /* パステルブルー */
+    transition: all 0.2s;
+}
+
+.work-item:hover {
+    background: #90caf9;
+    border-color: var(--primary-color);
+}
+
+.work-thumb {
+    width: 140px;
+    height: 100px;
+    background: #fff;
+    color: var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.work-info {
+    flex-grow: 1;
+}
+
+.work-info h3 {
+    margin-bottom: 5px;
+}
+
+.work-info p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+/* 連絡先 */
+.contact-box {
+    text-align: center;
+    background: #fff9c4;
+    /* パステルイエロー */
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    background: var(--border-color);
+    color: #fff;
+    padding: 15px;
+}
+
+/* Animations */
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    96%,
+    98% {
+        transform: scaleY(1);
+    }
+
+    97% {
+        transform: scaleY(0.1);
+    }
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+    .nav-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .status-window,
+    .work-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .bar-bg {
+        width: 100px;
+    }
+
+    .work-thumb {
+        width: 100%;
+        height: 150px;
+    }
+}
