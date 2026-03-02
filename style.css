@@ -449,6 +449,42 @@ nav {
     padding: 15px;
 }
 
+/* BGMコントロール */
+.bgm-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 3px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 3px 3px 0px rgba(62, 39, 35, 0.3);
+}
+
+.bgm-btn {
+    font-family: 'DotGothic16', sans-serif;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-color);
+    white-space: nowrap;
+}
+
+.bgm-btn:hover {
+    color: var(--primary-color);
+}
+
+#bgm-volume {
+    width: 80px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
 /* Animations */
 @keyframes float {
     from {

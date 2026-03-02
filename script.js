@@ -18,6 +18,29 @@ function toggleSkills() {
     }
 }
 
+// BGM制御
+let bgmPlaying = false;
+
+function toggleBGM() {
+    const bgm = document.getElementById('bgm');
+    const btn = document.getElementById('bgm-toggle');
+    if (bgmPlaying) {
+        bgm.pause();
+        btn.textContent = '🔇 BGM';
+        bgmPlaying = false;
+    } else {
+        bgm.volume = document.getElementById('bgm-volume').value / 100;
+        bgm.play();
+        btn.textContent = '🔊 BGM';
+        bgmPlaying = true;
+    }
+}
+
+function changeBGMVolume(val) {
+    const bgm = document.getElementById('bgm');
+    bgm.volume = val / 100;
+}
+
 // ドラクエ風・RPG風のタイピングエフェクト
 const textToType = "「ようこそ、冒険者さん！\nここは わたしの ポートフォリオです。\nぜひ ゆっくり 見ていってくださいね。」";
 const typewriterElement = document.getElementById('typewriter-text');

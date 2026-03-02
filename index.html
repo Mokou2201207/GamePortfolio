@@ -161,6 +161,18 @@
             <p>&copy; 2026 PLAYER 1. All Rights Reserved. GAME CLEAR!</p>
         </footer>
     </div>
+
+    <!-- BGM -->
+    <audio id="bgm" loop preload="auto">
+        <source src="bgm.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- BGMコントロール -->
+    <div class="bgm-control pixel-box" id="bgm-control">
+        <button class="bgm-btn" id="bgm-toggle" onclick="toggleBGM()">🔇 BGM</button>
+        <input type="range" id="bgm-volume" min="0" max="100" value="30" oninput="changeBGMVolume(this.value)">
+    </div>
+
     <script src="script.js"></script>
 </body>
 
