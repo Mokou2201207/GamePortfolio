@@ -212,11 +212,13 @@ nav {
 .avatar-img {
     width: 120px;
     height: 120px;
-    background: #ce93d8;
+    background-color: #fff;
+    background-image: url('Image/profile.png'), radial-gradient(circle, #f3e5f5 20%, transparent 20%);
+    /* 画像がない時のフォールバックとして元の柄も残す */
+    background-size: cover;
+    background-position: center;
     border: 4px solid var(--border-color);
     border-radius: 8px;
-    background-image: radial-gradient(circle, #f3e5f5 20%, transparent 20%);
-    background-size: 20px 20px;
 }
 
 .stats-box {
