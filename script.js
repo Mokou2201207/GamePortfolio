@@ -164,7 +164,7 @@ const gameData = {
     },
     'green-kun': {
         title: 'とびだせ！グリーンくん',
-        video: '',
+        video: 'Movie/orimitikun.mp4',
         thumbnail: 'Image/PC and smartphone games.png',
         info: {
             'ジャンル': '2Dアクション',
