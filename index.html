@@ -19,10 +19,10 @@
         <header class="pixel-box nav-box">
             <h1 class="logo">PLAYER 1</h1>
             <nav>
-                <button class="nes-btn" onclick="scrollToSection('home')">HOME</button>
-                <button class="nes-btn" onclick="scrollToSection('about')">STATUS</button>
-                <button class="nes-btn" onclick="scrollToSection('skills')">MAGIC</button>
-                <button class="nes-btn" onclick="scrollToSection('works')">QUESTS</button>
+                <button class="nes-btn" onclick="SE_navigate(); scrollToSection('home')">HOME</button>
+                <button class="nes-btn" onclick="SE_navigate(); scrollToSection('about')">STATUS</button>
+                <button class="nes-btn" onclick="SE_navigate(); scrollToSection('skills')">MAGIC</button>
+                <button class="nes-btn" onclick="SE_navigate(); scrollToSection('works')">QUESTS</button>
             </nav>
         </header>
 
@@ -45,7 +45,8 @@
                         <p id="typewriter-text"></p>
                         <span class="blinking-cursor">▼</span>
                     </div>
-                    <button class="nes-btn primary start-btn" onclick="scrollToSection('about')">PRESS START</button>
+                    <button class="nes-btn primary start-btn" onclick="SE_pressStart(); scrollToSection('about')">PRESS
+                        START</button>
                 </div>
             </section>
 
@@ -114,7 +115,8 @@
                         <h3>Blender</h3>
                     </div>
                 </div>
-                <button class="nes-btn primary expand-btn" id="expand-skills-btn" onclick="toggleSkills()">▼
+                <button class="nes-btn primary expand-btn" id="expand-skills-btn"
+                    onclick="SE_toggleExpand(); toggleSkills()">▼
                     もっと見る</button>
             </section>
 
@@ -124,17 +126,20 @@
 
                 <!-- カテゴリタブ -->
                 <div class="works-tabs">
-                    <button class="works-tab-btn active" onclick="switchWorksTab('pc', this)">🖥 PCゲーム</button>
-                    <button class="works-tab-btn" onclick="switchWorksTab('mobile', this)">📱 スマホゲーム</button>
-                    <button class="works-tab-btn" onclick="switchWorksTab('vr', this)">🥽 VR</button>
-                    <button class="works-tab-btn" onclick="switchWorksTab('gamejam', this)">🏆 ゲームジャム</button>
+                    <button class="works-tab-btn active" onclick="SE_tabSwitch(); switchWorksTab('pc', this)">🖥
+                        PCゲーム</button>
+                    <button class="works-tab-btn" onclick="SE_tabSwitch(); switchWorksTab('mobile', this)">📱
+                        スマホゲーム</button>
+                    <button class="works-tab-btn" onclick="SE_tabSwitch(); switchWorksTab('vr', this)">🥽 VR</button>
+                    <button class="works-tab-btn" onclick="SE_tabSwitch(); switchWorksTab('gamejam', this)">🏆
+                        ゲームジャム</button>
                 </div>
 
                 <!-- PCゲーム -->
                 <div class="works-tab-content active" id="tab-pc">
                     <div class="works-grid">
-                        <div class="work-card pixel-box" onclick="openWorkModal('echo-trigger')"
-                            onmouseenter="playCardVideo(this)" onmouseleave="stopCardVideo(this)">
+                        <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('echo-trigger')"
+                            onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
                             <div class="work-card-img">
                                 <img src="Image/PCgame.png" alt="Echo Trigger">
                                 <video class="work-card-video" src="Movie/EchoTriggerMove.mp4" muted loop
@@ -143,8 +148,8 @@
                             </div>
                             <h3 class="work-card-title">Echo Trigger</h3>
                         </div>
-                        <div class="work-card pixel-box" onclick="openWorkModal('pearl-adventure')"
-                            onmouseenter="playCardVideo(this)" onmouseleave="stopCardVideo(this)">
+                        <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('pearl-adventure')"
+                            onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
                             <div class="work-card-img">
                                 <img src="Image/PCgame2.png" alt="放て！パール君の大冒険！">
                                 <video class="work-card-video" src="Movie/放て！パールの大冒険！プレイ動画.mp4" muted loop
@@ -153,8 +158,8 @@
                             </div>
                             <h3 class="work-card-title">放て！パール君の大冒険！</h3>
                         </div>
-                        <div class="work-card pixel-box" onclick="openWorkModal('green-kun')"
-                            onmouseenter="playCardVideo(this)" onmouseleave="stopCardVideo(this)">
+                        <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('green-kun')"
+                            onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
                             <div class="work-card-img">
                                 <img src="Image/PC and smartphone games.png" alt="とびだせ！グリーンくん">
                                 <video class="work-card-video" src="Movie/orimitikun.mp4" muted loop
@@ -169,14 +174,16 @@
                 <!-- スマホゲーム -->
                 <div class="works-tab-content" id="tab-mobile">
                     <div class="works-grid">
-                        <div class="work-card pixel-box" onclick="openWorkModal('genesis-maker')">
+                        <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('genesis-maker')"
+                            onmouseenter="SE_cardHover()">
                             <div class="work-card-img">
                                 <img src="Image/smartphone games.png" alt="Genesis Maker">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">Genesis Maker</h3>
                         </div>
-                        <div class="work-card pixel-box" onclick="openWorkModal('green-kun')">
+                        <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('green-kun')"
+                            onmouseenter="SE_cardHover()">
                             <div class="work-card-img">
                                 <img src="Image/PC and smartphone games.png" alt="とびだせ！グリーンくん">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
@@ -189,7 +196,8 @@
                 <!-- VR -->
                 <div class="works-tab-content" id="tab-vr">
                     <div class="works-grid">
-                        <div class="work-card pixel-box" onclick="openWorkModal('donut-shop')">
+                        <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('donut-shop')"
+                            onmouseenter="SE_cardHover()">
                             <div class="work-card-img">
                                 <img src="Image/Vrgame.png" alt="ドーナツ屋さん">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
@@ -202,21 +210,24 @@
                 <!-- ゲームジャム -->
                 <div class="works-tab-content" id="tab-gamejam">
                     <div class="works-grid">
-                        <div class="work-card pixel-box" onclick="openWorkModal('gnome-forrest')">
+                        <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('gnome-forrest')"
+                            onmouseenter="SE_cardHover()">
                             <div class="work-card-img">
                                 <img src="Image/Game Jam.png" alt="GnomeForrest">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">GnomeForrest</h3>
                         </div>
-                        <div class="work-card pixel-box" onclick="openWorkModal('swing-bye-bye')">
+                        <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('swing-bye-bye')"
+                            onmouseenter="SE_cardHover()">
                             <div class="work-card-img">
                                 <img src="Image/Game Jam2.png" alt="Swing Bye Bye">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">Swing Bye Bye</h3>
                         </div>
-                        <div class="work-card pixel-box" onclick="openWorkModal('udon-catcher')">
+                        <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('udon-catcher')"
+                            onmouseenter="SE_cardHover()">
                             <div class="work-card-img">
                                 <img src="Image/Game Jam3.png" alt="Udon キャッチャー">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
@@ -230,7 +241,7 @@
             <!-- 作品詳細モーダル（フルページ） -->
             <div class="modal-overlay" id="work-modal" onclick="closeWorkModal(event)">
                 <div class="modal-content modal-detail pixel-box" onclick="event.stopPropagation()">
-                    <button class="modal-close" onclick="closeWorkModal(event, true)">✕</button>
+                    <button class="modal-close" onclick="SE_modalClose(); closeWorkModal(event, true)">✕</button>
 
                     <!-- タイトル -->
                     <h2 class="modal-detail-title" id="modal-title"></h2>
@@ -298,9 +309,9 @@
                 <div class="pixel-box contact-box">
                     <p>ギルド（連絡先）への伝言はこちらのボタンからどうぞ！</p>
                     <div class="social-links">
-                        <button class="nes-btn">Twitter</button>
-                        <button class="nes-btn">GitHub</button>
-                        <button class="nes-btn primary">MAIL</button>
+                        <button class="nes-btn" onclick="SE_contact()">Twitter</button>
+                        <button class="nes-btn" onclick="SE_contact()">GitHub</button>
+                        <button class="nes-btn primary" onclick="SE_contact()">MAIL</button>
                     </div>
                 </div>
             </section>
@@ -318,10 +329,11 @@
 
     <!-- BGMコントロール -->
     <div class="bgm-control pixel-box" id="bgm-control">
-        <button class="bgm-btn" id="bgm-toggle" onclick="toggleBGM()">🔇 BGM</button>
+        <button class="bgm-btn" id="bgm-toggle" onclick="SE_bgmToggle(); toggleBGM()">🔇 BGM</button>
         <input type="range" id="bgm-volume" min="0" max="100" value="30" oninput="changeBGMVolume(this.value)">
     </div>
 
+    <script src="se.js"></script>
     <script src="script.js"></script>
 </body>
 
