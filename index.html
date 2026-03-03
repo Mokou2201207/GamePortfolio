@@ -183,9 +183,11 @@
                             <h3 class="work-card-title">Genesis Maker</h3>
                         </div>
                         <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('green-kun')"
-                            onmouseenter="SE_cardHover()">
+                            onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
                             <div class="work-card-img">
                                 <img src="Image/PC and smartphone games.png" alt="とびだせ！グリーンくん">
+                                <video class="work-card-video" src="Movie/orimitikun.mp4" muted loop
+                                    playsinline></video>
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">とびだせ！グリーンくん</h3>
