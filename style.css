@@ -470,6 +470,27 @@ nav {
     transform: scale(1.05);
 }
 
+/* ホバー時のプレビュー動画 */
+.work-card-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.work-card.video-playing .work-card-video {
+    opacity: 1;
+}
+
+.work-card.video-playing .work-card-img img {
+    opacity: 0;
+}
+
 /* 画像が読み込めない時のプレースホルダー */
 .work-card-img.placeholder {
     background: linear-gradient(135deg, #e8d5f5 0%, #bbdefb 50%, #ffe0b2 100%);

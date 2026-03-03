@@ -133,9 +133,12 @@
                 <!-- PCゲーム -->
                 <div class="works-tab-content active" id="tab-pc">
                     <div class="works-grid">
-                        <div class="work-card pixel-box" onclick="openWorkModal('Image/PCgame.png', 'Echo Trigger')">
+                        <div class="work-card pixel-box" onclick="openWorkModal('Image/PCgame.png', 'Echo Trigger')"
+                            onmouseenter="playCardVideo(this)" onmouseleave="stopCardVideo(this)">
                             <div class="work-card-img">
                                 <img src="Image/PCgame.png" alt="Echo Trigger">
+                                <video class="work-card-video" src="Movie/EchoTriggerMove.mp4" muted loop
+                                    playsinline></video>
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">Echo Trigger</h3>

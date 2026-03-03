@@ -64,6 +64,25 @@ function typeWriter() {
     }
 }
 
+// カードホバー動画再生
+function playCardVideo(card) {
+    const video = card.querySelector('.work-card-video');
+    if (video) {
+        video.currentTime = 0;
+        video.play();
+        card.classList.add('video-playing');
+    }
+}
+
+function stopCardVideo(card) {
+    const video = card.querySelector('.work-card-video');
+    if (video) {
+        video.pause();
+        video.currentTime = 0;
+        card.classList.remove('video-playing');
+    }
+}
+
 // 作品タブ切り替え
 function switchWorksTab(category, btn) {
     // 全タブコンテンツを非表示
