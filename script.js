@@ -224,13 +224,14 @@ const gameData = {
             'ジャンル': '※ ここに記入',
             'プラットフォーム': 'PC (Windows)',
             '制作人数': '※ ここに記入',
-            '開発期間': 'ゲームジャム（※ 期間を記入）',
-            '開発環境': '※ ここに記入'
+            '開発期間': '2日間（ゲームジャム）',
+            '開発環境': '※ ここに記入',
+            'チーム形態': '初対面のメンバーとチーム制作'
         },
-        overview: '※ ゲームの概要を記入',
+        overview: 'ゲームジャムにて初対面のメンバーとチームを組み、わずか2日間で制作したゲームです。初めて会ったメンバーと協力し合いながら、短期間で一つの作品を完成させました。※ ゲームの内容を追記',
         roles: ['※ 担当部分を記入'],
-        highlights: [{ title: '※ こだわったポイント', description: '※ 詳細を記入' }],
-        challenges: [{ title: '※ 苦戦したポイント', description: '※ 詳細を記入' }],
+        highlights: [],
+        challenges: [],
         techDetails: [],
         links: []
     },
@@ -242,13 +243,14 @@ const gameData = {
             'ジャンル': '※ ここに記入',
             'プラットフォーム': 'PC (Windows)',
             '制作人数': '※ ここに記入',
-            '開発期間': 'ゲームジャム（※ 期間を記入）',
-            '開発環境': '※ ここに記入'
+            '開発期間': '2日間（ゲームジャム）',
+            '開発環境': '※ ここに記入',
+            'チーム形態': '初対面のメンバーとチーム制作'
         },
-        overview: '※ ゲームの概要を記入',
+        overview: 'ゲームジャムにて初対面のメンバーとチームを組み、わずか2日間で制作したゲームです。初めて会ったメンバーと協力し合いながら、短期間で一つの作品を完成させました。※ ゲームの内容を追記',
         roles: ['※ 担当部分を記入'],
-        highlights: [{ title: '※ こだわったポイント', description: '※ 詳細を記入' }],
-        challenges: [{ title: '※ 苦戦したポイント', description: '※ 詳細を記入' }],
+        highlights: [],
+        challenges: [],
         techDetails: [],
         links: []
     },
@@ -260,13 +262,14 @@ const gameData = {
             'ジャンル': '※ ここに記入',
             'プラットフォーム': 'PC (Windows)',
             '制作人数': '※ ここに記入',
-            '開発期間': 'ゲームジャム（※ 期間を記入）',
-            '開発環境': '※ ここに記入'
+            '開発期間': '2日間（ゲームジャム）',
+            '開発環境': '※ ここに記入',
+            'チーム形態': '初対面のメンバーとチーム制作'
         },
-        overview: '※ ゲームの概要を記入',
+        overview: 'ゲームジャムにて初対面のメンバーとチームを組み、わずか2日間で制作したゲームです。初めて会ったメンバーと協力し合いながら、短期間で一つの作品を完成させました。※ ゲームの内容を追記',
         roles: ['※ 担当部分を記入'],
-        highlights: [{ title: '※ こだわったポイント', description: '※ 詳細を記入' }],
-        challenges: [{ title: '※ 苦戦したポイント', description: '※ 詳細を記入' }],
+        highlights: [],
+        challenges: [],
         techDetails: [],
         links: []
     }
@@ -313,22 +316,34 @@ function openWorkModal(gameId) {
     roleList.innerHTML = data.roles.map(r => `<li>${r}</li>`).join('');
 
     // こだわりポイント
+    const highlightsSection = document.getElementById('modal-highlights-section');
     const highlightsDiv = document.getElementById('modal-highlights');
-    highlightsDiv.innerHTML = data.highlights.map(h =>
-        `<div class="modal-detail-item">
-            <h4>${h.title}</h4>
-            <p>${h.description}</p>
-        </div>`
-    ).join('');
+    if (data.highlights && data.highlights.length > 0) {
+        highlightsSection.style.display = 'block';
+        highlightsDiv.innerHTML = data.highlights.map(h =>
+            `<div class="modal-detail-item">
+                <h4>${h.title}</h4>
+                <p>${h.description}</p>
+            </div>`
+        ).join('');
+    } else {
+        highlightsSection.style.display = 'none';
+    }
 
     // 苦戦ポイント
+    const challengesSection = document.getElementById('modal-challenges-section');
     const challengesDiv = document.getElementById('modal-challenges');
-    challengesDiv.innerHTML = data.challenges.map(c =>
-        `<div class="modal-detail-item">
-            <h4>${c.title}</h4>
-            <p>${c.description}</p>
-        </div>`
-    ).join('');
+    if (data.challenges && data.challenges.length > 0) {
+        challengesSection.style.display = 'block';
+        challengesDiv.innerHTML = data.challenges.map(c =>
+            `<div class="modal-detail-item">
+                <h4>${c.title}</h4>
+                <p>${c.description}</p>
+            </div>`
+        ).join('');
+    } else {
+        challengesSection.style.display = 'none';
+    }
 
     // 技術詳細
     const techSection = document.getElementById('modal-tech-section');
