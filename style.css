@@ -520,6 +520,7 @@ nav {
     opacity: 0;
     transition: opacity 0.3s;
     border-radius: 4px;
+    z-index: 2;
 }
 
 .work-card:hover .work-card-hover {
