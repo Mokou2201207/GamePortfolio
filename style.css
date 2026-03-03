@@ -379,52 +379,255 @@ nav {
     box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
 }
 
-/* 作品 (セーブデータ) */
-.works-list {
+/* 作品 (セーブデータ) — カテゴリタブ */
+.works-tabs {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
-.work-item {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    background: #bbdefb;
-    /* パステルブルー */
+.works-tab-btn {
+    font-family: 'DotGothic16', sans-serif;
+    background: #f5f5f5;
+    border: 3px solid var(--border-color);
+    border-radius: 8px 8px 0 0;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: var(--text-color);
     transition: all 0.2s;
+    box-shadow: 2px -2px 0px rgba(62, 39, 35, 0.15);
 }
 
-.work-item:hover {
-    background: #90caf9;
+.works-tab-btn:hover {
+    background: #ffe0b2;
+    transform: translateY(-2px);
+}
+
+.works-tab-btn.active {
+    background: #bbdefb;
+    border-bottom: 3px solid #bbdefb;
+    color: var(--border-color);
+    font-weight: bold;
+    box-shadow: 2px -2px 0px rgba(62, 39, 35, 0.25), inset 0 -3px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* タブコンテンツ */
+.works-tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.works-tab-content.active {
+    display: block;
+}
+
+/* 作品グリッド */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* 作品カード */
+.work-card {
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+    background: #e3f2fd;
+    padding: 12px;
+    text-align: center;
+}
+
+.work-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 6px 6px 0px rgba(62, 39, 35, 0.3), 0 0 20px rgba(255, 138, 128, 0.3);
     border-color: var(--primary-color);
 }
 
-.work-thumb {
-    width: 140px;
-    height: 100px;
+/* カード画像エリア */
+.work-card-img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 1;
     background: #fff;
-    color: var(--border-color);
+    border: 3px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.work-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.work-card:hover .work-card-img img {
+    transform: scale(1.05);
+}
+
+/* 画像が読み込めない時のプレースホルダー */
+.work-card-img.placeholder {
+    background: linear-gradient(135deg, #e8d5f5 0%, #bbdefb 50%, #ffe0b2 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+}
+
+.work-card-img.placeholder::after {
+    content: '🎮';
+    font-size: 3rem;
+    opacity: 0.6;
+}
+
+/* ホバー時のオーバーレイ */
+.work-card-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(62, 39, 35, 0.6);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 4px;
+}
+
+.work-card:hover .work-card-hover {
+    opacity: 1;
+}
+
+/* カードタイトル */
+.work-card-title {
+    margin-top: 12px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    text-shadow: 1px 1px 0 #fff;
+}
+
+/* ========== モーダル ========== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 700px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: #fffdf5;
     border: 4px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px 25px 25px;
+    box-shadow: 8px 8px 0px rgba(62, 39, 35, 0.4);
+    animation: modalAppear 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: var(--primary-color);
+    color: #fff;
+    border: 3px solid var(--border-color);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-family: 'DotGothic16', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: var(--hover-color);
+    transform: scale(1.1) rotate(90deg);
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 0 #fff;
+}
+
+.modal-img-wrapper {
+    width: 100%;
+    border: 3px solid var(--border-color);
     border-radius: 8px;
-    font-size: 1.2rem;
-    flex-shrink: 0;
+    overflow: hidden;
+    background: #fff;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.work-info {
-    flex-grow: 1;
+.modal-img-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-.work-info h3 {
-    margin-bottom: 5px;
+/* モーダル内の画像が読み込めない時 */
+.modal-img-wrapper img[src=""] {
+    display: none;
 }
 
-.work-info p {
-    font-size: 0.95rem;
-    margin-bottom: 5px;
+.modal-img-wrapper::after {
+    content: '📋 説明画像がここに表示されます';
+    font-family: 'DotGothic16', sans-serif;
+    color: #999;
+    font-size: 1rem;
+    position: absolute;
+}
+
+.modal-img-wrapper:has(img[src]:not(img[src=""])) {
+    position: relative;
+}
+
+.modal-img-wrapper:has(img[src]:not(img[src=""]))::after {
+    display: none;
 }
 
 /* 連絡先 */
@@ -576,8 +779,7 @@ nav {
         justify-content: center;
     }
 
-    .status-window,
-    .work-item {
+    .status-window {
         flex-direction: column;
         text-align: center;
     }
@@ -586,8 +788,21 @@ nav {
         width: 100px;
     }
 
-    .work-thumb {
-        width: 100%;
-        height: 150px;
+    .works-tabs {
+        gap: 5px;
+    }
+
+    .works-tab-btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px 15px 15px;
     }
 }
