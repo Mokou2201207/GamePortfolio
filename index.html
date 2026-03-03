@@ -133,7 +133,7 @@
                 <!-- PCゲーム -->
                 <div class="works-tab-content active" id="tab-pc">
                     <div class="works-grid">
-                        <div class="work-card pixel-box" onclick="openWorkModal('Image/PCgame.png', 'Echo Trigger')"
+                        <div class="work-card pixel-box" onclick="openWorkModal('echo-trigger')"
                             onmouseenter="playCardVideo(this)" onmouseleave="stopCardVideo(this)">
                             <div class="work-card-img">
                                 <img src="Image/PCgame.png" alt="Echo Trigger">
@@ -143,15 +143,14 @@
                             </div>
                             <h3 class="work-card-title">Echo Trigger</h3>
                         </div>
-                        <div class="work-card pixel-box" onclick="openWorkModal('Image/PCgame2.png', '放て！パール君の大冒険！')">
+                        <div class="work-card pixel-box" onclick="openWorkModal('pearl-adventure')">
                             <div class="work-card-img">
                                 <img src="Image/PCgame2.png" alt="放て！パール君の大冒険！">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">放て！パール君の大冒険！</h3>
                         </div>
-                        <div class="work-card pixel-box"
-                            onclick="openWorkModal('Image/PC and smartphone games.png', 'とびだせ！グリーンくん')">
+                        <div class="work-card pixel-box" onclick="openWorkModal('green-kun')">
                             <div class="work-card-img">
                                 <img src="Image/PC and smartphone games.png" alt="とびだせ！グリーンくん">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
@@ -164,16 +163,14 @@
                 <!-- スマホゲーム -->
                 <div class="works-tab-content" id="tab-mobile">
                     <div class="works-grid">
-                        <div class="work-card pixel-box"
-                            onclick="openWorkModal('Image/smartphone games.png', 'Genesis Maker')">
+                        <div class="work-card pixel-box" onclick="openWorkModal('genesis-maker')">
                             <div class="work-card-img">
                                 <img src="Image/smartphone games.png" alt="Genesis Maker">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">Genesis Maker</h3>
                         </div>
-                        <div class="work-card pixel-box"
-                            onclick="openWorkModal('Image/PC and smartphone games.png', 'とびだせ！グリーンくん')">
+                        <div class="work-card pixel-box" onclick="openWorkModal('green-kun')">
                             <div class="work-card-img">
                                 <img src="Image/PC and smartphone games.png" alt="とびだせ！グリーンくん">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
@@ -186,7 +183,7 @@
                 <!-- VR -->
                 <div class="works-tab-content" id="tab-vr">
                     <div class="works-grid">
-                        <div class="work-card pixel-box" onclick="openWorkModal('Image/Vrgame.png', 'ドーナツ屋さん')">
+                        <div class="work-card pixel-box" onclick="openWorkModal('donut-shop')">
                             <div class="work-card-img">
                                 <img src="Image/Vrgame.png" alt="ドーナツ屋さん">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
@@ -199,22 +196,21 @@
                 <!-- ゲームジャム -->
                 <div class="works-tab-content" id="tab-gamejam">
                     <div class="works-grid">
-                        <div class="work-card pixel-box" onclick="openWorkModal('Image/Game Jam.png', 'GnomeForrest')">
+                        <div class="work-card pixel-box" onclick="openWorkModal('gnome-forrest')">
                             <div class="work-card-img">
                                 <img src="Image/Game Jam.png" alt="GnomeForrest">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">GnomeForrest</h3>
                         </div>
-                        <div class="work-card pixel-box"
-                            onclick="openWorkModal('Image/Game Jam2.png', 'Swing Bye Bye')">
+                        <div class="work-card pixel-box" onclick="openWorkModal('swing-bye-bye')">
                             <div class="work-card-img">
                                 <img src="Image/Game Jam2.png" alt="Swing Bye Bye">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">Swing Bye Bye</h3>
                         </div>
-                        <div class="work-card pixel-box" onclick="openWorkModal('Image/Game Jam3.png', 'Udon キャッチャー')">
+                        <div class="work-card pixel-box" onclick="openWorkModal('udon-catcher')">
                             <div class="work-card-img">
                                 <img src="Image/Game Jam3.png" alt="Udon キャッチャー">
                                 <div class="work-card-hover">🔍 くわしく見る</div>
@@ -225,13 +221,67 @@
                 </div>
             </section>
 
-            <!-- 作品詳細モーダル -->
+            <!-- 作品詳細モーダル（フルページ） -->
             <div class="modal-overlay" id="work-modal" onclick="closeWorkModal(event)">
-                <div class="modal-content pixel-box">
+                <div class="modal-content modal-detail pixel-box" onclick="event.stopPropagation()">
                     <button class="modal-close" onclick="closeWorkModal(event, true)">✕</button>
-                    <h3 class="modal-title" id="modal-title"></h3>
-                    <div class="modal-img-wrapper">
+
+                    <!-- タイトル -->
+                    <h2 class="modal-detail-title" id="modal-title"></h2>
+
+                    <!-- プレイ動画 -->
+                    <div class="modal-video-wrapper" id="modal-video-section">
+                        <video id="modal-video" controls muted playsinline>
+                            <source id="modal-video-src" src="" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <!-- サムネイル（動画がない場合） -->
+                    <div class="modal-img-wrapper" id="modal-img-section" style="display:none;">
                         <img id="modal-img" src="" alt="作品詳細">
+                    </div>
+
+                    <!-- 基本情報テーブル -->
+                    <div class="modal-section">
+                        <h3 class="modal-section-title">📊 基本情報</h3>
+                        <table class="modal-info-table" id="modal-info-table">
+                        </table>
+                    </div>
+
+                    <!-- ゲーム概要 -->
+                    <div class="modal-section" id="modal-overview-section">
+                        <h3 class="modal-section-title">📝 ゲーム概要</h3>
+                        <p id="modal-overview"></p>
+                    </div>
+
+                    <!-- 自分の担当 -->
+                    <div class="modal-section" id="modal-role-section">
+                        <h3 class="modal-section-title">💪 担当した部分</h3>
+                        <ul id="modal-role-list"></ul>
+                    </div>
+
+                    <!-- こだわりポイント -->
+                    <div class="modal-section" id="modal-highlights-section">
+                        <h3 class="modal-section-title">✨ こだわったポイント</h3>
+                        <div id="modal-highlights"></div>
+                    </div>
+
+                    <!-- 苦戦したポイント -->
+                    <div class="modal-section" id="modal-challenges-section">
+                        <h3 class="modal-section-title">🔧 苦戦したポイント・学んだこと</h3>
+                        <div id="modal-challenges"></div>
+                    </div>
+
+                    <!-- 技術詳細（画像付き） -->
+                    <div class="modal-section" id="modal-tech-section">
+                        <h3 class="modal-section-title">🖼 技術詳細</h3>
+                        <div id="modal-tech-details"></div>
+                    </div>
+
+                    <!-- リンク -->
+                    <div class="modal-section" id="modal-links-section">
+                        <h3 class="modal-section-title">🔗 リンク</h3>
+                        <div id="modal-links" class="modal-links"></div>
                     </div>
                 </div>
             </div>
