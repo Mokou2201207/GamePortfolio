@@ -294,6 +294,7 @@ function openWorkModal(gameId) {
     if (data.video) {
         videoSrc.src = data.video;
         video.load();
+        video.play();
         videoSection.style.display = 'block';
         imgSection.style.display = 'none';
     } else {
