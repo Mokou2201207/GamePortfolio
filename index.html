@@ -175,9 +175,10 @@
                 <div class="works-tab-content" id="tab-mobile">
                     <div class="works-grid">
                         <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('genesis-maker')"
-                            onmouseenter="SE_cardHover()">
+                            onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
                             <div class="work-card-img">
                                 <img src="Image/smartphone games.png" alt="Genesis Maker">
+                                <video class="work-card-video" src="Movie/GameMove.mp4" muted loop playsinline></video>
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">Genesis Maker</h3>

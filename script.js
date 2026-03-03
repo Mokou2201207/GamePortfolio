@@ -182,7 +182,7 @@ const gameData = {
     },
     'genesis-maker': {
         title: 'Genesis Maker',
-        video: '',
+        video: 'Movie/GameMove.mp4',
         thumbnail: 'Image/smartphone games.png',
         info: {
             'ジャンル': '※ ここに記入',
