@@ -146,7 +146,7 @@ const gameData = {
     },
     'pearl-adventure': {
         title: '放て！パール君の大冒険！',
-        video: '',
+        video: 'Movie/放て！パールの大冒険！プレイ動画.mp4',
         thumbnail: 'Image/PCgame2.png',
         info: {
             'ジャンル': '2Dアクション',
