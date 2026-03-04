@@ -200,9 +200,10 @@
                 <div class="works-tab-content" id="tab-vr">
                     <div class="works-grid">
                         <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('donut-shop')"
-                            onmouseenter="SE_cardHover()">
+                            onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
                             <div class="work-card-img">
                                 <img src="Image/Vrgame.png" alt="ドーナツ屋さん">
+                                <video class="work-card-video" src="Movie/Dount.mp4" muted loop playsinline></video>
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">ドーナツ屋さん</h3>

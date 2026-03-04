@@ -201,7 +201,7 @@ const gameData = {
     },
     'donut-shop': {
         title: 'ドーナツ屋さん',
-        video: '',
+        video: 'Movie/Dount.mp4',
         thumbnail: 'Image/Vrgame.png',
         info: {
             'ジャンル': 'VRシミュレーション',
