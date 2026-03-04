@@ -225,7 +225,7 @@ const gameData = {
         highlights: [
             {
                 title: '選択時の弾むUI演出',
-                description: 'コマンドを選択した際、UIに<span class="text-red">はずみの演出</span>を加えることで、操作時の<span class="text-red">気持ちよさ</span>を追求しました。スマホならではの直感的なフィードバックを大切にしています。'
+                description: 'コマンドを選択した際、UIに<span class="text-red">はずみの演出</span>を加えることで、操作時の<span class="text-red">気持ちよさ</span>を追求しました。<span class="text-red">DOTweenを用いて</span>コマンドの弾みなどを制作し、スマホならではの直感的なフィードバックを大切にしています。'
             },
             {
                 title: '没入感を高めるタップ演出',
