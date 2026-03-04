@@ -54,6 +54,7 @@ function typeWriter() {
             typewriterElement.innerHTML += '<br>';
         } else {
             typewriterElement.innerHTML += textToType.charAt(charIndex);
+            SE_typewriter(); // 1文字ごとにSEを鳴らす
         }
         charIndex++;
         // ランダムなタイピング速度でより人間らしく、ゲームっぽく

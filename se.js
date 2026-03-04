@@ -160,3 +160,9 @@ function SE_contact() {
 function SE_click() {
     playTone(1000, 0.05, 'square', 0.08);
 }
+
+// 💬 タイプライター — RPG会話風の1文字ごとのピッ音
+function SE_typewriter() {
+    const freq = 800 + Math.random() * 200; // 800〜1000Hz でランダム感
+    playTone(freq, 0.04, 'square', 0.06, true);
+}
