@@ -331,6 +331,12 @@ nav {
     }
 }
 
+/* 強調用赤文字 */
+.text-red {
+    color: #ff5252;
+    font-weight: bold;
+}
+
 /* スキル */
 .skills-grid {
     display: grid;

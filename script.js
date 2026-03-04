@@ -121,11 +121,11 @@ const gameData = {
         highlights: [
             {
                 title: '臨場感あふれるムービー演出',
-                description: '近年のゲームにおける演出の重要性を考え、Cinemachineを活用したカットシーン制作に注力しました。プレイヤー視点だけでなく、敵の視点や一人称・三人称視点を効果的に切り替えることで、物語への没入感と緊迫感を高める演出を実現しました。'
+                description: '近年のゲームにおける演出の重要性を考え、<span class="text-red">Cinemachine</span>を活用したカットシーン制作に注力しました。プレイヤー視点だけでなく、敵の視点や一人称・三人称視点を<span class="text-red">効果的に切り替える</span>ことで、物語への没入感と緊迫感を高める演出を実現しました。'
             },
             {
                 title: '扇状RayCastによる敵センサー',
-                description: '敵の視界判定にColliderではなく扇状のRayCastを採用しました。Colliderに比べて処理負荷を抑えられるだけでなく、遮蔽物の判定も正確に行えるため、パフォーマンスと精度の両立を意識して実装しました。'
+                description: '敵の視界判定にColliderではなく<span class="text-red">扇状のRayCast</span>を採用しました。Colliderに比べて<span class="text-red">処理負荷を抑えられる</span>だけでなく、<span class="text-red">遮蔽物の判定も正確</span>に行えるため、パフォーマンスと精度の両立を意識して実装しました。'
             }
         ],
         challenges: [
