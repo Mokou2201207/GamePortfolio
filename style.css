@@ -57,6 +57,13 @@ body::before {
     animation: floatBg 25s linear infinite;
 }
 
+/* 強調用の赤文字 */
+.text-red {
+    color: #ff5252;
+    font-weight: bold;
+}
+
+
 .game-container {
     max-width: 1100px;
     margin: 0 auto;
