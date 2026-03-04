@@ -9,8 +9,25 @@ function getAudioContext() {
     if (!audioCtx) {
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     }
+    // ブラウザのオートプレイポリシーで中断されていたら再開
+    if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+    }
     return audioCtx;
 }
+
+// ページ初回操作時に AudioContext を確実に再開する
+function initAudioOnInteraction() {
+    if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+    }
+    document.removeEventListener('click', initAudioOnInteraction);
+    document.removeEventListener('touchstart', initAudioOnInteraction);
+    document.removeEventListener('keydown', initAudioOnInteraction);
+}
+document.addEventListener('click', initAudioOnInteraction);
+document.addEventListener('touchstart', initAudioOnInteraction);
+document.addEventListener('keydown', initAudioOnInteraction);
 
 // 基本的な音を鳴らすヘルパー
 function playTone(frequency, duration, type = 'square', volume = 0.15, decay = true) {
