@@ -130,6 +130,10 @@ const gameData = {
             {
                 title: '心理を再現する「警戒度」システム',
                 description: '敵が一瞬プレイヤーを視認しても即座に攻撃せず、まずは「確認」から入る<span class="text-red">警戒度</span>を導入。距離に応じて<span class="text-red">上昇スピードを変化</span>させることでリアリティを追求しました。また、一度見失うと警戒度は下がる一方、<span class="text-red">敵の移動スピードが上がる</span>ように設計し、逃走時の緊張感を維持しました。'
+            },
+            {
+                title: '手作業による徹底したレベルデザイン',
+                description: 'マップのアセットを<span class="text-red">一つずつ手作業で配置</span>し、細部までこだわり抜いた<span class="text-red">レベルデザイン</span>を実現しました。また、ドアやキー（鍵）などのギミック用プログラムも<span class="text-red">すべて自分で設計</span>・実装し、ゲーム体験と完璧に調和するシステムを構築しました。'
             }
         ],
         challenges: [
