@@ -126,6 +126,10 @@ const gameData = {
             {
                 title: '扇状RayCastによる敵センサー',
                 description: '敵の視界判定にColliderではなく<span class="text-red">扇状のRayCast</span>を採用しました。Colliderに比べて<span class="text-red">処理負荷を抑えられる</span>だけでなく、<span class="text-red">遮蔽物の判定も正確</span>に行えるため、パフォーマンスと精度の両立を意識して実装しました。'
+            },
+            {
+                title: '心理を再現する「警戒度」システム',
+                description: '敵が一瞬プレイヤーを視認しても即座に攻撃せず、まずは「確認」から入る<span class="text-red">警戒度</span>を導入。距離に応じて<span class="text-red">上昇スピードを変化</span>させることでリアリティを追求しました。また、一度見失うと警戒度は下がる一方、<span class="text-red">敵の移動スピードが上がる</span>ように設計し、逃走時の緊張感を維持しました。'
             }
         ],
         challenges: [
