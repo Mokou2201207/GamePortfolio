@@ -168,11 +168,11 @@ const gameData = {
         video: 'Movie/orimitikun.mp4',
         thumbnail: 'Image/PC and smartphone games.png',
         info: {
-            'ジャンル': '2Dアクション',
+            'ジャンル': '2Dアクションゲーム',
             'プラットフォーム': 'PC / スマートフォン',
-            '制作人数': '※ ここに記入',
-            '開発期間': '※ ここに記入',
-            '開発環境': '※ ここに記入'
+            '制作人数': '2人',
+            '開発期間': '2025年7月（約3週間）',
+            '開発環境': 'Unity 2022 / C# / Visual Studio'
         },
         overview: '※ ゲームの概要を記入',
         roles: ['※ 担当部分を記入'],
