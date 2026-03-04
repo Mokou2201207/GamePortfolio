@@ -215,25 +215,31 @@
                 <div class="works-tab-content" id="tab-gamejam">
                     <div class="works-grid">
                         <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('gnome-forrest')"
-                            onmouseenter="SE_cardHover()">
+                            onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
                             <div class="work-card-img">
                                 <img src="Image/Game Jam.png" alt="GnomeForrest">
+                                <video class="work-card-video" src="Movie/GnomeForrest プレイ動画.mp4" muted loop
+                                    playsinline></video>
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">GnomeForrest</h3>
                         </div>
                         <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('swing-bye-bye')"
-                            onmouseenter="SE_cardHover()">
+                            onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
                             <div class="work-card-img">
                                 <img src="Image/Game Jam2.png" alt="Swing Bye Bye">
+                                <video class="work-card-video" src="Movie/Swungbyebye プレイ動画.mp4" muted loop
+                                    playsinline></video>
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">Swing Bye Bye</h3>
                         </div>
                         <div class="work-card pixel-box" onclick="SE_modalOpen(); openWorkModal('udon-catcher')"
-                            onmouseenter="SE_cardHover()">
+                            onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
                             <div class="work-card-img">
                                 <img src="Image/Game Jam3.png" alt="Udon キャッチャー">
+                                <video class="work-card-video" src="Movie/Udonキャッチャープレイ動画.mp4" muted loop
+                                    playsinline></video>
                                 <div class="work-card-hover">🔍 くわしく見る</div>
                             </div>
                             <h3 class="work-card-title">Udon キャッチャー</h3>

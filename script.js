@@ -219,7 +219,7 @@ const gameData = {
     },
     'gnome-forrest': {
         title: 'GnomeForrest',
-        video: '',
+        video: 'Movie/GnomeForrest プレイ動画.mp4',
         thumbnail: 'Image/Game Jam.png',
         info: {
             'ジャンル': '※ ここに記入',
@@ -238,7 +238,7 @@ const gameData = {
     },
     'swing-bye-bye': {
         title: 'Swing Bye Bye',
-        video: '',
+        video: 'Movie/Swungbyebye プレイ動画.mp4',
         thumbnail: 'Image/Game Jam2.png',
         info: {
             'ジャンル': '※ ここに記入',
@@ -257,7 +257,7 @@ const gameData = {
     },
     'udon-catcher': {
         title: 'Udon キャッチャー',
-        video: '',
+        video: 'Movie/Udonキャッチャープレイ動画.mp4',
         thumbnail: 'Image/Game Jam3.png',
         info: {
             'ジャンル': '※ ここに記入',
