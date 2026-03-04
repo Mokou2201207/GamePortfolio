@@ -234,6 +234,10 @@ const gameData = {
             {
                 title: '戦略性を広げるゲームシステム',
                 description: '単なるコマンド選択に留まらず、<span class="text-red">引き直し機能</span>や<span class="text-red">保留機能</span>を導入。プレイヤーの選択肢を増やすことで、ゲームとしての<span class="text-red">幅と深み</span>を格段に向上させました。'
+            },
+            {
+                title: '技術的な設計: ScriptableObjectとCommandパターン',
+                description: '各コマンドのステータス（気温や水などのステータス）を<span class="text-red">ScriptableObject</span>として定義し、それらを<span class="text-red">Command</span>で実行する設計を採用しました。拡張性と保守性を両立させた設計を意識しています。'
             }
         ],
         challenges: [],
