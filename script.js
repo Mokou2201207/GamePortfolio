@@ -139,7 +139,7 @@ const gameData = {
         challenges: [
             {
                 title: '敵の作り方 — 人間らしさの再現',
-                description: 'どうやって敵を人間らしく動かすかに苦戦。研究の結果、ステートマシン（State）を導入し、Idle状態・Search状態・攻撃状態の3つの状態を設計。移動→索敵→攻撃の流れを実装することで、人間らしい敵の行動パターンを再現した。'
+                description: 'どうやって敵を人間らしく動かすかに苦戦。研究の結果、<span class="text-red">ステートマシン（State）</span>を導入し、<span class="text-red">Idle状態・Search状態・攻撃状態</span>の3つの状態を設計。移動→索敵→攻撃の流れを実装することで、<span class="text-red">人間らしい敵の行動パターン</span>を再現した。'
             }
         ],
         techDetails: [],
@@ -196,15 +196,15 @@ const gameData = {
         ],
         highlights: [{
             title: 'コイン取得時の演出',
-            description: 'コインを取ったらそのまま消えるのではなく、取得後にエフェクトを再生する演出を加えました。この工夫により、コインを取った瞬間の気持ち良さを生み出し、プレイヤーの達成感を高めています。'
+            description: 'コインを取ったらそのまま消えるのではなく、取得後に<span class="text-red">エフェクトを再生する演出</span>を加えました。この工夫により、コインを取った瞬間の<span class="text-red">気持ち良さ</span>を生み出し、プレイヤーの<span class="text-red">達成感を高めています</span>。'
         }],
         challenges: [{
             title: '2Dアクションの壁判定 — 壁に吸い付く不具合',
-            description: 'プレイヤーが壁（ブロック）の側面に接触した際、摩擦や判定の重なりによって「壁に吸い付く」ような挙動が発生し、スムーズに落下できない不具合に直面しました。Mathf.Absを使うことで、右側でも左側でも同じロジックで「中心からの距離」を測れるようにし、コードをスリムに保ちつつ、左右どちらの端でも正確に離脱判定（落下への移行）を行えるようになりました。'
+            description: 'プレイヤーが壁（ブロック）の側面に接触した際、摩擦や判定の重なりによって<span class="text-red">「壁に吸い付く」ような挙動</span>が発生し、スムーズに落下できない不具合に直面しました。<span class="text-red">Mathf.Abs</span>を使うことで、右側でも左側でも同じロジックで「中心からの距離」を測れるようにし、コードをスリムに保ちつつ、左右どちらの端でも正確に<span class="text-red">離脱判定（落下への移行）</span>を行えるようになりました。'
         },
         {
             title: 'コインエフェクトの表示問題',
-            description: 'コイン取得時にエフェクトを流す仕組みでしたが、コインを取った後にオブジェクトをDestroyしていたため、子要素のエフェクトも一緒に消えてしまい表示できませんでした。解決策として、Destroyではなくコライダー（判定）とMeshを非表示にすることで、エフェクトの再生を可能にしました。エフェクトの再生が完了してからオブジェクトを削除する流れに変更し、演出を両立させることに成功しました。'
+            description: 'コイン取得時にエフェクトを流す仕組みでしたが、コインを取った後にオブジェクトをDestroyしていたため、<span class="text-red">子要素のエフェクトも一緒に消えてしまい</span>表示できませんでした。解決策として、<span class="text-red">Destroyではなくコライダー（判定）とMeshを非表示</span>にすることで、エフェクトの再生を可能にしました。エフェクトの再生が完了してからオブジェクトを削除する流れに変更し、<span class="text-red">演出を両立</span>させることに成功しました。'
         }],
         techDetails: [],
         links: []
@@ -214,16 +214,29 @@ const gameData = {
         video: 'Movie/GameMove.mp4',
         thumbnail: 'Image/smartphone games.png',
         info: {
-            'ジャンル': '※ ここに記入',
+            'ジャンル': 'スマートフォンコマンドゲーム',
             'プラットフォーム': 'スマートフォン',
-            '制作人数': '※ ここに記入',
-            '開発期間': '※ ここに記入',
-            '開発環境': '※ ここに記入'
+            '制作人数': '1人',
+            '開発期間': '2026年1月（二週間）',
+            '開発環境': 'Unity 2022 / C# / Visual Studio'
         },
-        overview: '※ ゲームの概要を記入',
-        roles: ['※ 担当部分を記入'],
-        highlights: [{ title: '※ こだわったポイント', description: '※ 詳細を記入' }],
-        challenges: [{ title: '※ 苦戦したポイント', description: '※ 詳細を記入' }],
+        overview: 'コンセプトは「あなたは世界の神様です」。あなたの手で世界を作っていきましょう。ターゲット層は若者向けの作品です。',
+        roles: ['すべての工程（企画・プログラム・デザイン・エフェクト）を一人で担当'],
+        highlights: [
+            {
+                title: '選択時の弾むUI演出',
+                description: 'コマンドを選択した際、UIに<span class="text-red">はずみの演出</span>を加えることで、操作時の<span class="text-red">気持ちよさ</span>を追求しました。スマホならではの直感的なフィードバックを大切にしています。'
+            },
+            {
+                title: '没入感を高めるタップ演出',
+                description: '画面をタップした際の<span class="text-red">波紋エフェクト</span>や、長押しスライドで<span class="text-red">星が追いかけてくる演出</span>を実装。何気ない操作にも「楽しさ」を感じさせる工夫を凝らしました。'
+            },
+            {
+                title: '戦略性を広げるゲームシステム',
+                description: '単なるコマンド選択に留まらず、<span class="text-red">引き直し機能</span>や<span class="text-red">保留機能</span>を導入。プレイヤーの選択肢を増やすことで、ゲームとしての<span class="text-red">幅と深み</span>を格段に向上させました。'
+            }
+        ],
+        challenges: [],
         techDetails: [],
         links: []
     },
