@@ -1061,10 +1061,8 @@ nav {
 .carousel-track {
     display: flex;
     width: max-content;
-    animation: carousel-scroll 30s linear infinite;
-    /* 少しゆっくりに */
+    animation: carousel-scroll 35s linear infinite;
     gap: 30px;
-    padding-left: 20px;
 }
 
 .carousel-track:hover {
@@ -1077,7 +1075,8 @@ nav {
     }
 
     100% {
-        transform: translateX(calc(-(320px + 30px) * 4));
+        transform: translateX(calc(-350px * 4));
+        /* (320px width + 30px gap) * 4 items */
     }
 }
 
