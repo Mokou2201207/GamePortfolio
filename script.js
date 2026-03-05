@@ -109,9 +109,11 @@ const gameData = {
         info: {
             'ジャンル': '3DスパイアクションFPS',
             'プラットフォーム': 'PC (Windows)',
+            'イベント': '穴吹デザイン展に出展',
             '制作人数': '1人',
-            '開発期間': '2025年7月〜2026年1月（約7ヶ月）',
-            '開発環境': 'Unity6 / C# / Visual Studio'
+            '開発期間': '2025年7月から制作 (2年生)',
+            '開発環境': 'Unity6 / C# / Visual Studio',
+            '受賞': '奨励賞'
         },
         overview: '滅びゆく世界でワクチンを探す、3DスパイアクションFPS。FPSや探索ゲームが好きな人に向けた作品です。この世界の謎を解きながらワクチンを入手せよ！',
         roles: [
@@ -143,7 +145,9 @@ const gameData = {
             }
         ],
         techDetails: [],
-        links: []
+        links: [
+            { label: 'GitHub', url: 'https://github.com/Mokou2005/EchoTrigger2' }
+        ]
     },
     'pearl-adventure': {
         title: '放て！パール君の大冒険！',
@@ -152,9 +156,11 @@ const gameData = {
         info: {
             'ジャンル': '2Dシューティングゲーム',
             'プラットフォーム': 'PC (Windows)',
+            'イベント': '学校のデザイン展に出展',
             '制作人数': '1人',
-            '開発期間': '2024年10月〜2025年1月',
-            '開発環境': 'C++ / Visual Studio'
+            '開発期間': '2024年10月から制作 (1年生)',
+            '開発環境': 'C++ / Visual Studio',
+            '受賞': '協賛賞'
         },
         overview: '平和な海を取り戻すため、パール君が立ち上がる！自分一人で全てを作り上げた、爽快な2Dシューティングゲームです。',
         roles: ['プログラム、デザイン、ステージ制作を含む全ての工程'],
@@ -175,7 +181,9 @@ const gameData = {
             }
         ],
         techDetails: [],
-        links: []
+        links: [
+            { label: 'Google Drive', url: 'https://drive.google.com/drive/folders/12a-NjLZn93edbnNSN-POn0PbG1pQKUtl?usp=sharing' }
+        ]
     },
     'green-kun': {
         title: 'とびだせ！グリーンくん',
@@ -184,8 +192,9 @@ const gameData = {
         info: {
             'ジャンル': '2Dアクションゲーム',
             'プラットフォーム': 'PC / スマートフォン',
+            'イベント': 'SanukiXGame出展（地域のイベント）',
             '制作人数': '2人',
-            '開発期間': '2025年7月（約3週間）',
+            '開発期間': '2025年8月に制作',
             '開発環境': 'Unity 2022 / C# / Visual Studio'
         },
         overview: 'コインを取り戻すためにボスに挑む、2Dアクションゲーム。小学生など子供向けに作られた作品で、アクションゲームが好きな子をターゲットにしています。モンスターを倒しながらボスのステージまで進んでいくゲームです。',
@@ -200,14 +209,16 @@ const gameData = {
         }],
         challenges: [{
             title: '2Dアクションの壁判定 — 壁に吸い付く不具合',
-            description: 'プレイヤーが壁（ブロック）の側面に接触した際、摩擦や判定の重なりによって<span class="text-red">「壁に吸い付く」ような挙動</span>が発生し、スムーズに落下できない不具合に直面しました。<span class="text-red">Mathf.Abs</span>を使うことで、右側でも左側でも同じロジックで「中心からの距離」を測れるようにし、コードをスリムに保ちつつ、左右どちらの端でも正確に<span class="text-red">離脱判定（落下への移行）</span>を行えるようになりました。'
+            description: 'プレイヤーが壁（ブロック）の側面に接触した際、摩擦や判定 of 重なりによって<span class="text-red">「壁に吸い付く」ような挙動</span>が発生し、スムーズに落下できない不具合に直面しました。<span class="text-red">Mathf.Abs</span>を使うことで、右側でも左側でも同じロジックで「中心からの距離」を測れるようにし、コードをスリムに保ちつつ、左右どちらの端でも正確に<span class="text-red">離脱判定（落下への移行）</span>を行えるようになりました。'
         },
         {
             title: 'コインエフェクトの表示問題',
             description: 'コイン取得時にエフェクトを流す仕組みでしたが、コインを取った後にオブジェクトをDestroyしていたため、<span class="text-red">子要素のエフェクトも一緒に消えてしまい</span>表示できませんでした。解決策として、<span class="text-red">Destroyではなくコライダー（判定）とMeshを非表示</span>にすることで、エフェクトの再生を可能にしました。エフェクトの再生が完了してからオブジェクトを削除する流れに変更し、<span class="text-red">演出を両立</span>させることに成功しました。'
         }],
         techDetails: [],
-        links: []
+        links: [
+            { label: 'GitHub', url: 'https://github.com/sogotoya/Orimichikun' }
+        ]
     },
     'genesis-maker': {
         title: 'Genesis Maker',
@@ -216,8 +227,9 @@ const gameData = {
         info: {
             'ジャンル': 'スマートフォンコマンドゲーム',
             'プラットフォーム': 'スマートフォン',
+            'イベント': '個人製作',
             '制作人数': '1人',
-            '開発期間': '2026年1月（二週間）',
+            '開発期間': '2025年8月に制作',
             '開発環境': 'Unity 2022 / C# / Visual Studio'
         },
         overview: 'コンセプトは「あなたは世界の神様です」。あなたの手で世界を作っていきましょう。ターゲット層は若者向けの作品です。',
@@ -229,7 +241,7 @@ const gameData = {
             },
             {
                 title: '没入感を高めるタップ演出',
-                description: '画面をタップした際の<span class="text-red">波紋エフェクト</span>や、長押しスライドで<span class="text-red">星が追いかけてくる演出</span>を実装。何気ない操作にも「楽しさ」を感じさせる工夫を凝らしました。'
+                description: '画面をタップした際の<span class="text-red">波紋エフェクト</span>や、長押しスライドで<span class="text-red">星が追いかけてくる演出</span>を実装. 何気ない操作にも「楽しさ」を感じさせる工夫を凝らしました。'
             },
             {
                 title: '戦略性を広げるゲームシステム',
@@ -242,7 +254,9 @@ const gameData = {
         ],
         challenges: [],
         techDetails: [],
-        links: []
+        links: [
+            { label: 'GitHub', url: 'https://github.com/Mokou2201207/GenesisMaker' }
+        ]
     },
     'donut-shop': {
         title: 'ドーナツ屋さん',
@@ -251,8 +265,9 @@ const gameData = {
         info: {
             'ジャンル': 'VRシミュレーション',
             'プラットフォーム': 'VR',
+            'イベント': '個人製作',
             '制作人数': '2人',
-            '開発期間': '2025年12月〜2026年1月',
+            '開発期間': '2025年12月に制作',
             '開発環境': 'Unity 2022 / C# / Visual Studio'
         },
         overview: 'コンセプトは「あなたもドーナツを作ってみませんか？」。VRでドーナツ作りを体験できるシミュレーションゲームです。シューティングゲームが好きな人にもおすすめの作品です。',
@@ -270,12 +285,14 @@ const gameData = {
             },
             {
                 title: '可読性を意識した保守性の高い設計',
-                description: '共同開発において、相手から<span class="text-red">scriptが見えやすく</span>なるように設計。自分だけでなく<span class="text-red">他人の読みやすさ</span>を徹底的に考慮して制作しました。ぜひ内部設計も見てほしいポイントです。'
+                description: '共同開発において、相手から<span class="text-red">scriptが見えやすく</span>なるように設計. 自分だけでなく<span class="text-red">他人の読みやすさ</span>を徹底的に考慮して制作しました。ぜひ内部設計も見てほしいポイントです。'
             }
         ],
         challenges: [],
         techDetails: [],
-        links: []
+        links: [
+            { label: 'GitHub', url: 'https://github.com/Mokou2201207/DonutSimulation' }
+        ]
     },
     'gnome-forrest': {
         title: 'GnomeForrest',
@@ -284,8 +301,9 @@ const gameData = {
         info: {
             'ジャンル': '2Dアクションゲーム',
             'プラットフォーム': 'PC (Windows)',
+            'イベント': 'グローバルゲームジャム',
             '制作人数': '4人',
-            '開発期間': '2026年1月（2日間）',
+            '開発期間': '2026年1月制作',
             '開発環境': 'Unity 2022 / C# / Visual Studio',
             'チーム形態': '初対面のメンバーとチーム制作'
         },
@@ -300,7 +318,9 @@ const gameData = {
         highlights: [],
         challenges: [],
         techDetails: [],
-        links: []
+        links: [
+            { label: 'Google Drive', url: 'https://drive.google.com/drive/folders/1-VcnB05WI8pkcEAG62UE45Im2V2kbOca?usp=sharing' }
+        ]
     },
     'swing-bye-bye': {
         title: 'Swing Bye Bye',
@@ -309,9 +329,11 @@ const gameData = {
         info: {
             'ジャンル': '競争型NPC避けるゲーム',
             'プラットフォーム': 'PC (Windows)',
+            'イベント': 'ゲームジャム高岡山2025',
             '制作人数': '4人',
-            '開発期間': '2025年10月（2日間）',
-            '開発環境': 'Unity 2022 / C# / Visual Studio'
+            '開発期間': '2025年10月制作',
+            '開発環境': 'Unity 2022 / C# / Visual Studio',
+            '受賞': '讃岐GameN賞'
         },
         overview: '「NPCと競争し一位を勝ち取れ！」をコンセプトにした、競争型NPC回避ゲームです。スリルある競争を楽しみたい若者向けの作品です。',
         roles: [
@@ -323,7 +345,9 @@ const gameData = {
         highlights: [],
         challenges: [],
         techDetails: [],
-        links: []
+        links: [
+            { label: 'GitHub', url: 'https://github.com/Mokou2005/SWINGBYE' }
+        ]
     },
     'udon-catcher': {
         title: 'Udon キャッチャー',
@@ -332,8 +356,9 @@ const gameData = {
         info: {
             'ジャンル': '対戦型競争ゲーム',
             'プラットフォーム': 'PC (Windows)',
+            'イベント': '讃岐GameN（ゲームジャム）',
             '制作人数': '6人',
-            '開発期間': '2025年5月（2日間）',
+            '開発期間': '2025年5月制作',
             '開発環境': 'Unity 2022 / C# / Visual Studio'
         },
         overview: '「みんなで競争してだれが一番食べ物をとれるか勝負！！」をコンセプトにした対戦型競争ゲームです。誰でも直感的に楽しめる作品を目指しました。',
@@ -344,8 +369,10 @@ const gameData = {
         highlights: [],
         challenges: [],
         techDetails: [],
-        links: []
-    }
+        links: [
+            { label: 'Google Drive', url: 'https://drive.google.com/drive/folders/1snd-EzsmJnT3jQM27QWfpu3CAaER97YL?usp=sharing' }
+        ]
+    },
 };
 
 // ===== モーダル表示 =====
@@ -357,6 +384,22 @@ function openWorkModal(gameId) {
 
     // タイトル
     document.getElementById('modal-title').textContent = data.title;
+
+    // 受賞
+    const awardContainer = document.getElementById('modal-award-container');
+    if (data.info['受賞']) {
+        awardContainer.innerHTML = `<div class="modal-award">🏆 ${data.info['受賞']}</div>`;
+    } else {
+        awardContainer.innerHTML = '';
+    }
+
+    // イベント
+    const eventContainer = document.getElementById('modal-event-container');
+    if (data.info['イベント']) {
+        eventContainer.innerHTML = `<span class="event-tag">📍 ${data.info['イベント']}</span>`;
+    } else {
+        eventContainer.innerHTML = '';
+    }
 
     // 動画 or サムネイル
     const videoSection = document.getElementById('modal-video-section');
