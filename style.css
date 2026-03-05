@@ -1,17 +1,17 @@
 :root {
     --bg-color: #fce4ec;
-    /* 蜿ｯ諢帙＞繝代せ繝�Ν繝斐Φ繧ｯ */
+    /* 可愛いパステルピンク */
     --box-bg: #ffffff;
     --border-color: #3e2723;
-    /* 縺薙￡闌ｶ濶ｲ縺ｮ繧�＆縺励＞繝懊�繝繝ｼ */
+    /* こげ茶色のやさしいボーダー */
     --text-color: #3e2723;
     --primary-color: #ff8a80;
-    /* 繝代せ繝�Ν繝ｬ繝�ラ */
+    /* パステルレッド */
     --hover-color: #ff5252;
     --hp-color: #69f0ae;
-    /* 繝代せ繝�Ν繧ｰ繝ｪ繝ｼ繝ｳ */
+    /* パステルグリーン */
     --mp-color: #40c4ff;
-    /* 繝代せ繝�Ν繝悶Ν繝ｼ */
+    /* パステルブルー */
 }
 
 * {
@@ -22,9 +22,9 @@
 
 body {
     font-family: 'DotGothic16', sans-serif;
-    /* 繝峨ャ繝育ｵｵ鬚ｨ縺ｮ蜿ｯ諢帙＞繝輔か繝ｳ繝� */
+    /* ドット絵風の可愛いフォント */
     background-color: #f5e6d3;
-    /* 繧ｯ繝�く繝ｼ逕溷慍縺ｮ繧医≧縺ｪ貂ｩ縺九＞繝吶�繧ｸ繝･ */
+    /* クッキー生地のような温かいベージュ */
     /* A soft, warm background color like a cookie */
     background-image:
         radial-gradient(circle, rgba(210, 170, 120, 0.3) 8px, transparent 8px),
