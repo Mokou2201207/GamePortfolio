@@ -1061,9 +1061,9 @@ nav {
 .carousel-track {
     display: flex;
     width: max-content;
-    /* 内容に合わせて幅を広げる */
-    animation: scroll 25s linear infinite;
-    gap: 20px;
+    animation: scroll 30s linear infinite;
+    /* 少しゆっくりに */
+    gap: 30px;
     padding-left: 20px;
 }
 
@@ -1077,16 +1077,16 @@ nav {
     }
 
     100% {
-        transform: translateX(calc(-270px * 4));
+        transform: translateX(calc(-(320px + 30px) * 4));
     }
 
-    /* (slide width 250px + gap 20px) * 4 items */
+    /* (slide width 320px + gap 30px) * 4 items */
 }
 
 .carousel-slide {
-    width: 250px;
-    height: 180px;
-    padding: 10px;
+    width: 320px;
+    height: 240px;
+    padding: 12px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -1100,21 +1100,21 @@ nav {
 
 .carousel-slide:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     background: #fff9c4;
 }
 
 .carousel-slide img {
     width: 100%;
-    height: 110px;
+    height: 160px;
     object-fit: cover;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 3px solid var(--border-color);
     margin-bottom: 15px;
     border-radius: 4px;
 }
 
 .carousel-slide span {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: var(--text-color);
 }
