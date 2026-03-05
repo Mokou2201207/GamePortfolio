@@ -25,14 +25,14 @@ body {
     /* 繝峨ャ繝育ｵｵ鬚ｨ縺ｮ蜿ｯ諢帙＞繝輔か繝ｳ繝� */
     background-color: #f5e6d3;
     /* 繧ｯ繝�く繝ｼ逕溷慍縺ｮ繧医≧縺ｪ貂ｩ縺九＞繝吶�繧ｸ繝･ */
+    /* A soft, warm background color like a cookie */
     background-image:
         radial-gradient(circle, rgba(210, 170, 120, 0.3) 8px, transparent 8px),
         radial-gradient(circle, rgba(190, 150, 100, 0.2) 5px, transparent 5px),
         radial-gradient(circle, rgba(220, 180, 130, 0.25) 6px, transparent 6px);
     background-size: 90px 90px, 70px 70px, 110px 110px;
     background-position: 0 0, 35px 45px, 55px 20px;
-    /* 繧ｯ繝�く繝ｼ縺ｮ繝√Ι繧ｳ繝√ャ繝鈴｢ｨ繝峨ャ繝域ｨ｡讒� */
-    /* 繧ｯ繝く繝ｼ縺ｮ繝√Ι繧ｳ繝√ャ繝鈴｢ｨ繝峨ャ繝域ｨ｡讒 */
+    /* クッキーのチョコチップ風ドット模様 */
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
@@ -66,19 +66,15 @@ body::before {
     z-index: 1;
 }
 
-/* 繝斐け繧ｻ繝ｫ鬚ｨ繝懊ャ繧ｯ繧ｹ医Ξ繝医Ο繧ｲ繝ｼ繝譫 */
-.pixel-box {
-    background: var(--box-bg);
-    border: 4px solid var(--border-color);
-    border-radius: 8px;
-    /* 隗偵ｒ蟆代＠荳ｸ縺上＠縺ｦ縺九ｏ縺＆繧偵繝ｩ繧ｹ */
-    padding: 20px;
-    box-shadow: 4px 4px 0px rgba(62, 39, 35, 0.2);
-    margin-bottom: 20px;
-    position: relative;
+border-radius: 8px;
+/* 角を少し丸くしてかわいさをプラス */
+padding: 20px;
+box-shadow: 4px 4px 0px rgba(62, 39, 35, 0.2);
+margin-bottom: 20px;
+position: relative;
 }
 
-/* 繝翫ン繧ｲ繝ｼ繧ｷ繝ｧ繝ｳ */
+/* ナビゲーション */
 .nav-box {
     display: flex;
     justify-content: space-between;
@@ -87,7 +83,7 @@ body::before {
     top: 10px;
     z-index: 100;
     background: #fffdf5;
-    /* 蟆代＠繧ｯ繝ｪ繝ｼ繝濶ｲ */
+    /* Creamy white background */
 }
 
 .logo {
@@ -102,7 +98,7 @@ nav {
     flex-wrap: wrap;
 }
 
-/* 繝ｬ繝医Ο縺ｪ繝懊ち繝ｳ */
+/* NES風ボタン */
 .nes-btn {
     font-family: 'DotGothic16', sans-serif;
     background-color: #f5f5f5;
@@ -131,7 +127,7 @@ nav {
     background-color: var(--hover-color);
 }
 
-/* 繧ｻ繧ｯ繧ｷ繝ｧ繝ｳ蜈ｱ騾 */
+/* セクション見出し */
 .section {
     margin: 40px 0;
     animation: fadeIn 0.8s ease-in;
@@ -144,12 +140,12 @@ nav {
     color: var(--primary-color);
 }
 
-/* 繝偵繝ｭ繝ｼ繧ｻ繧ｯ繧ｷ繝ｧ繝ｳ */
+/* ヒーローセクション */
 .hero {
     text-align: center;
     padding: 50px 20px;
     background: #ffe0b2;
-    /* 貂ｩ縺九∩縺ｮ縺ゅｋ繧ｪ繝ｬ繝ｳ繧ｸ邉ｻ繝代せ繝Ν */
+    /* A light orange-yellow like a cookie */
 }
 
 .sprite-container {
@@ -160,7 +156,7 @@ nav {
     margin-bottom: 20px;
 }
 
-/* 蜿ｯ諢帙＞縺翫縺/繧ｹ繝ｩ繧､繝鬚ｨ縺ｮ繧ｭ繝｣繝ｩ繧ｯ繧ｿ繝ｼ */
+/* メインキャラクター/スライム風のキャラクター */
 .character-sprite {
     width: 70px;
     height: 70px;
@@ -172,7 +168,7 @@ nav {
     box-shadow: inset -5px -5px 0px rgba(0, 0, 0, 0.1);
 }
 
-/* 繧ｹ繝ｩ繧､繝縺ｮ逶ｮ */
+/* スライムの目 */
 .eye {
     position: absolute;
     width: 16px;
@@ -231,7 +227,7 @@ nav {
     /* 矢印を削除 */
 }
 
-/* 繝｡繝そ繝ｼ繧ｸ繧ｦ繧｣繝ｳ繝峨え */
+/* メッセージウィンドウ */
 .message-box {
     background: var(--border-color);
     color: white;
@@ -263,12 +259,12 @@ nav {
     animation: pulse 2s infinite;
 }
 
-/* 繧ｹ繝繧ｿ繧ｹ逕ｻ髱｢ */
+/* ステータス画面 */
 .status-window {
     display: flex;
     gap: 30px;
     background: #e1bee7;
-    /* 繝代せ繝Ν繝代繝励Ν */
+    /* Main purple color */
 }
 
 .avatar-box {
@@ -328,7 +324,7 @@ nav {
     border: 2px dashed var(--border-color);
 }
 
-/* 驥題牡縺ｫ霈昴￥繝く繧ｹ繝 */
+/* 黄金に輝くテキスト */
 .gold-text {
     color: #ffd700;
     font-weight: bold;
@@ -359,13 +355,13 @@ nav {
     }
 }
 
-/* 蠑ｷ隱ｿ逕ｨ襍､譁ｭ */
+/* 緊急用赤文字 */
 .text-red {
     color: #ff5252;
     font-weight: bold;
 }
 
-/* 繧ｹ繧ｭ繝ｫ */
+/* スキル */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -409,11 +405,11 @@ nav {
     font-weight: bold;
     border: 4px solid var(--border-color);
     border-radius: 50%;
-    /* 荳ｸ縺上＠縺ｦ縺九ｏ縺￥ */
+    /* 丸くする */
     box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
 }
 
-/* 菴懷刀 (繧ｻ繝ｼ繝悶ョ繝ｼ繧ｿ) 窶 繧ｫ繝ざ繝ｪ繧ｿ繝 */
+/* 制作物 (ポートフォリオ) - タブ */
 .works-tabs {
     display: flex;
     gap: 8px;
@@ -640,7 +636,7 @@ nav {
     transform: scale(1.1) rotate(90deg);
 }
 
-/* 隧ｳ邏ｰ繝｢繝ｼ繝繝ｫ繧ｿ繧､繝医Ν */
+/* 詳細モーダルタイトル */
 .modal-detail-title {
     text-align: center;
     font-size: 1.6rem;
@@ -651,7 +647,7 @@ nav {
     border-bottom: 3px dashed var(--border-color);
 }
 
-/* 繝励Ξ繧､蜍慕判 */
+/* プレビュー動画 */
 .modal-video-wrapper {
     width: 100%;
     margin-bottom: 25px;
@@ -666,7 +662,7 @@ nav {
     display: block;
 }
 
-/* 繧ｵ繝繝阪う繝ｫ逕ｻ蜒 */
+/* スクリーンショット */
 .modal-img-wrapper {
     width: 100%;
     border: 3px solid var(--border-color);
@@ -682,7 +678,7 @@ nav {
     display: block;
 }
 
-/* 繧ｻ繧ｯ繧ｷ繝ｧ繝ｳ蜈ｱ騾 */
+/* セクション見出し */
 .modal-section {
     margin-bottom: 25px;
     padding: 20px;
@@ -811,7 +807,7 @@ nav {
 .contact-box {
     text-align: center;
     background: #fff9c4;
-    /* 繝代せ繝Ν繧､繧ｨ繝ｭ繝ｼ */
+    /* Main yellow color */
 }
 
 .social-links {
@@ -829,7 +825,7 @@ nav {
     padding: 15px;
 }
 
-/* BGM繧ｳ繝ｳ繝医Ο繝ｼ繝ｫ */
+/* BGMコントローラー */
 .bgm-control {
     position: fixed;
     bottom: 20px;
@@ -1046,4 +1042,75 @@ nav {
     font-size: 0.9rem;
     font-weight: bold;
     box-shadow: 2px 2px 0px rgba(25, 118, 210, 0.2);
+}
+
+/* お気に入り作品カルーセル */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.4);
+    border: 4px solid var(--border-color);
+}
+
+.carousel-track {
+    display: flex;
+    width: max-content;
+    /* 内容に合わせて幅を広げる */
+    animation: scroll 25s linear infinite;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-270px * 4));
+    }
+
+    /* (slide width 250px + gap 20px) * 4 items */
+}
+
+.carousel-slide {
+    width: 250px;
+    height: 180px;
+    padding: 10px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border: 3px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carousel-slide:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: #fff9c4;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.carousel-slide span {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--text-color);
 }
