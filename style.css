@@ -1061,7 +1061,7 @@ nav {
 .carousel-track {
     display: flex;
     width: max-content;
-    animation: scroll 30s linear infinite;
+    animation: carousel-scroll 30s linear infinite;
     /* 少しゆっくりに */
     gap: 30px;
     padding-left: 20px;
@@ -1071,7 +1071,7 @@ nav {
     animation-play-state: paused;
 }
 
-@keyframes scroll {
+@keyframes carousel-scroll {
     0% {
         transform: translateX(0);
     }
@@ -1079,8 +1079,6 @@ nav {
     100% {
         transform: translateX(calc(-(320px + 30px) * 4));
     }
-
-    /* (slide width 320px + gap 30px) * 4 items */
 }
 
 .carousel-slide {
