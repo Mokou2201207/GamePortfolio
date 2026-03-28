@@ -120,43 +120,53 @@
                     もっと見る</button>
             </section>
 
-            <!-- Featured Projects (Carousel) -->
+            <!-- 注目作品 -->
             <section id="featured" class="section">
-                <h2 class="section-title">▶ お気に入り作品</h2>
-                <div class="carousel-container pixel-box">
-                    <div class="carousel-track">
-                        <div class="carousel-slide" onclick="SE_modalOpen(); openWorkModal('echo-trigger')">
+                <h2 class="section-title">▶ 注目作品</h2>
+                <div class="featured-grid">
+                    <div class="featured-card pixel-box" onclick="SE_modalOpen(); openWorkModal('echo-trigger')"
+                        onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
+                        <div class="featured-badge">⭐ PICK UP</div>
+                        <div class="award-badge">奨励賞</div>
+                        <div class="featured-card-img">
                             <img src="Image/PCgame.png" alt="Echo Trigger">
-                            <span>Echo Trigger</span>
+                            <video class="work-card-video" src="Movie/EchoTriggerMove.mp4" muted loop
+                                playsinline></video>
+                            <div class="featured-card-overlay">
+                                <span class="featured-play-icon">▶</span>
+                                <span>くわしく見る</span>
+                            </div>
                         </div>
-                        <div class="carousel-slide" onclick="SE_modalOpen(); openWorkModal('green-kun')">
+                        <div class="featured-card-info">
+                            <h3 class="featured-card-title">Echo Trigger</h3>
+                            <p class="featured-card-genre">3DスパイアクションFPS</p>
+                            <div class="featured-card-tags">
+                                <span class="featured-tag">Unity</span>
+                                <span class="featured-tag">C#</span>
+                                <span class="featured-tag">PC</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featured-card pixel-box" onclick="SE_modalOpen(); openWorkModal('green-kun')"
+                        onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
+                        <div class="featured-badge">⭐ PICK UP</div>
+                        <div class="featured-card-img">
                             <img src="Image/PC and smartphone games.png" alt="とびだせ！グリーンくん">
-                            <span>とびだせ！グリーンくん</span>
+                            <video class="work-card-video" src="Movie/orimitikun.mp4" muted loop
+                                playsinline></video>
+                            <div class="featured-card-overlay">
+                                <span class="featured-play-icon">▶</span>
+                                <span>くわしく見る</span>
+                            </div>
                         </div>
-                        <div class="carousel-slide" onclick="SE_modalOpen(); openWorkModal('genesis-maker')">
-                            <img src="Image/smartphone games.png" alt="Genesis Maker">
-                            <span>Genesis Maker</span>
-                        </div>
-                        <div class="carousel-slide" onclick="SE_modalOpen(); openWorkModal('gnome-forrest')">
-                            <img src="Image/Game Jam.png" alt="GnomeForrest">
-                            <span>GnomeForrest</span>
-                        </div>
-                        <!-- Duplicates for looping -->
-                        <div class="carousel-slide" onclick="SE_modalOpen(); openWorkModal('echo-trigger')">
-                            <img src="Image/PCgame.png" alt="Echo Trigger">
-                            <span>Echo Trigger</span>
-                        </div>
-                        <div class="carousel-slide" onclick="SE_modalOpen(); openWorkModal('green-kun')">
-                            <img src="Image/PC and smartphone games.png" alt="とびだせ！グリーンくん">
-                            <span>とびだせ！グリーンくん</span>
-                        </div>
-                        <div class="carousel-slide" onclick="SE_modalOpen(); openWorkModal('genesis-maker')">
-                            <img src="Image/smartphone games.png" alt="Genesis Maker">
-                            <span>Genesis Maker</span>
-                        </div>
-                        <div class="carousel-slide" onclick="SE_modalOpen(); openWorkModal('gnome-forrest')">
-                            <img src="Image/Game Jam.png" alt="GnomeForrest">
-                            <span>GnomeForrest</span>
+                        <div class="featured-card-info">
+                            <h3 class="featured-card-title">とびだせ！グリーンくん</h3>
+                            <p class="featured-card-genre">2Dアクションゲーム</p>
+                            <div class="featured-card-tags">
+                                <span class="featured-tag">Unity</span>
+                                <span class="featured-tag">C#</span>
+                                <span class="featured-tag">PC / スマホ</span>
+                            </div>
                         </div>
                     </div>
                 </div>

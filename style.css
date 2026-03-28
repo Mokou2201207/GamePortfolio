@@ -1054,70 +1054,211 @@ nav {
     box-shadow: 2px 2px 0px rgba(25, 118, 210, 0.2);
 }
 
-/* お気に入り作品カルーセル */
-.carousel-container {
-    width: 100%;
-    overflow: hidden;
-    padding: 20px 0;
+/* 注目作品 - 大きな2カラムレイアウト */
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
     margin: 20px 0;
-    background: rgba(255, 255, 255, 0.4);
-    border: 4px solid var(--border-color);
 }
 
-.carousel-track {
+.featured-card {
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+    background: linear-gradient(135deg, #fffdf5 0%, #fff3e0 100%);
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    animation: featuredFadeIn 0.8s ease-out;
+}
+
+.featured-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 8px 8px 0px rgba(62, 39, 35, 0.35), 0 0 30px rgba(255, 138, 128, 0.4);
+    border-color: var(--primary-color);
+}
+
+@keyframes featuredFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* PICK UP バッジ */
+.featured-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8a80 50%, #ffab91 100%);
+    color: #fff;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px rgba(255, 107, 107, 0.4);
+    z-index: 6;
+    animation: badgePulse 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 2px 2px 8px rgba(255, 107, 107, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 2px 2px 15px rgba(255, 107, 107, 0.7);
+    }
+}
+
+/* カード画像エリア */
+.featured-card-img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #fff;
+    overflow: hidden;
     display: flex;
-    width: max-content;
-    animation: carousel-scroll 35s linear infinite;
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
-.carousel-track:hover {
-    animation-play-state: paused;
+.featured-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-@keyframes carousel-scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-350px * 4));
-        /* (320px width + 30px gap) * 4 items */
-    }
+.featured-card:hover .featured-card-img img {
+    transform: scale(1.08);
 }
 
-.carousel-slide {
-    width: 320px;
-    height: 240px;
-    padding: 12px;
-    flex-shrink: 0;
+/* ホバー時のオーバーレイ */
+.featured-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(62, 39, 35, 0.1) 0%, rgba(62, 39, 35, 0.7) 100%);
+    color: #fff;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background: #fff;
-    border: 3px solid var(--border-color);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.carousel-slide:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    background: #fff9c4;
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-bottom: 3px solid var(--border-color);
-    margin-bottom: 15px;
-    border-radius: 4px;
-}
-
-.carousel-slide span {
+    gap: 10px;
     font-size: 1.1rem;
     font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: 2;
+}
+
+.featured-card:hover .featured-card-overlay {
+    opacity: 1;
+}
+
+.featured-play-icon {
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 138, 128, 0.9);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.featured-card:hover .featured-play-icon {
+    animation: playBounce 0.6s ease;
+}
+
+@keyframes playBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+/* カード動画 - featuredカード用 */
+.featured-card .work-card-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.featured-card.video-playing .work-card-video {
+    opacity: 1;
+}
+
+.featured-card.video-playing .featured-card-img img {
+    opacity: 0;
+}
+
+/* カード情報エリア */
+.featured-card-info {
+    padding: 18px 20px 22px;
+    text-align: left;
+    background: linear-gradient(180deg, #fff 0%, #fffdf5 100%);
+    border-top: 3px solid var(--border-color);
+}
+
+.featured-card-title {
+    font-size: 1.4rem;
     color: var(--text-color);
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+    margin-bottom: 6px;
+}
+
+.featured-card-genre {
+    font-size: 0.95rem;
+    color: #795548;
+    margin-bottom: 12px;
+}
+
+.featured-card-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.featured-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    color: #1565c0;
+    border: 2px solid #90caf9;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.featured-tag:hover {
+    background: linear-gradient(135deg, #bbdefb 0%, #90caf9 100%);
+    transform: translateY(-2px);
+}
+
+/* スマホ対応 */
+@media (max-width: 700px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
 }
