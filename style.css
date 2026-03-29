@@ -1262,3 +1262,232 @@ nav {
         grid-template-columns: 1fr;
     }
 }
+
+/* ========== 制作中作品 (WIP) セクション ========== */
+.wip-card {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+    animation: featuredFadeIn 0.8s ease-out;
+}
+
+.wip-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 8px 8px 0px rgba(62, 39, 35, 0.35), 0 0 30px rgba(255, 183, 77, 0.4);
+    border-color: #ffb74d;
+}
+
+/* NOW DEVELOPING バッジ */
+.wip-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #ffb74d 0%, #ff9800 50%, #f57c00 100%);
+    color: #fff;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(255, 152, 0, 0.5);
+    z-index: 10;
+    animation: wipBadgePulse 2s ease-in-out infinite;
+    pointer-events: none;
+    letter-spacing: 1px;
+}
+
+@keyframes wipBadgePulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 2px 2px 10px rgba(255, 152, 0, 0.5);
+    }
+    50% {
+        transform: scale(1.06);
+        box-shadow: 2px 2px 20px rgba(255, 152, 0, 0.8);
+    }
+}
+
+/* ビジュアルエリア */
+.wip-card-visual {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* バックグラウンド動画（常時再生） */
+.wip-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.5) saturate(1.2);
+    transition: filter 0.5s ease;
+}
+
+.wip-card:hover .wip-bg-video {
+    filter: brightness(0.7) saturate(1.3);
+}
+
+/* ホバー時のフル動画 */
+.wip-card .work-card-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.wip-card.video-playing .work-card-video {
+    opacity: 1;
+}
+
+.wip-card.video-playing .wip-bg-video {
+    opacity: 0;
+}
+
+.wip-card.video-playing .wip-overlay {
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.6) 100%);
+}
+
+/* オーバーレイ */
+.wip-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(0, 0, 0, 0.7) 100%);
+    z-index: 3;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px 35px;
+    transition: background 0.5s ease;
+}
+
+.wip-overlay-content {
+    color: #fff;
+    text-align: left;
+    width: 100%;
+}
+
+.wip-title {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 6px;
+    letter-spacing: 2px;
+}
+
+.wip-genre {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 14px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.wip-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+/* 進捗バー */
+.wip-progress-section {
+    max-width: 350px;
+}
+
+.wip-progress-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.wip-progress-bar {
+    width: 100%;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.wip-progress-fill {
+    height: 100%;
+    width: 45%;
+    background: linear-gradient(90deg, #ffb74d 0%, #ff9800 50%, #f57c00 100%);
+    border-radius: 6px;
+    position: relative;
+    animation: wipProgressGlow 2s ease-in-out infinite;
+}
+
+.wip-progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 100%);
+    animation: wipProgressShine 2s ease-in-out infinite;
+}
+
+@keyframes wipProgressGlow {
+    0%, 100% {
+        box-shadow: 0 0 6px rgba(255, 152, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(255, 152, 0, 0.9);
+    }
+}
+
+@keyframes wipProgressShine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(250%);
+    }
+}
+
+/* スマホ対応 - WIP */
+@media (max-width: 700px) {
+    .wip-card-visual {
+        aspect-ratio: 16 / 10;
+    }
+
+    .wip-title {
+        font-size: 1.4rem;
+    }
+
+    .wip-overlay {
+        padding: 20px;
+    }
+
+    .wip-progress-section {
+        max-width: 100%;
+    }
+}

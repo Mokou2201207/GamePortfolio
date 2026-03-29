@@ -372,6 +372,37 @@ const gameData = {
             { label: 'Google Drive', url: 'https://drive.google.com/drive/folders/1snd-EzsmJnT3jQM27QWfpu3CAaER97YL?usp=sharing' }
         ]
     },
+    'revive-summoner': {
+        title: 'Revive Summoner',
+        video: 'Movie/ReviveSummoner.mp4',
+        thumbnail: '',
+        info: {
+            'ジャンル': 'ソーシャルRPGゲーム',
+            'プラットフォーム': 'スマホ',
+            'イベント': '個人製作',
+            '制作人数': '1人',
+            '開発期間': '2025年3月から',
+            '開発環境': 'Unity2022 / C# / Visual Studio',
+            '受賞': '奨励賞'
+        },
+        overview: '敵の攻撃を避けて倒すゲーム！！なんと避けゲーとRPGの合体！？ダンジョンで勝っても死んでもコインがもらえてガチャを引きキャラクターを増やそう！！',
+        roles: ['全て'],
+        highlights: [
+            {
+                title: '便利に使いやすく設計！',
+                description: '<span class="text-red">ScriptableObject</span>を使いデータのシステムを作り、そのキャラクターの情報とスプライトを設置するだけで<span class="text-red">GachaManage</span>が処理をしてくれて、簡単に新しいピックアップのガチャが作れるようにした！！その利点は<span class="text-red">ずっと使いまわしにできること</span>！！'
+            },
+            {
+                title: 'Home画面のキャラクターの見せ方',
+                description: 'Home画面に<span class="text-red">上下にいろんなイラストがスライド</span>される演出を工夫した！！それを作ることでいろいろなキャラクターが見えるので<span class="text-red">飽きない</span>、このキャラクターに<span class="text-red">興味をしめせる</span>効果がある！'
+            }
+        ],
+        challenges: [],
+        techDetails: [],
+        links: [
+            { label: 'GitHub', url: 'https://github.com/Mokou2201207/ReviveSummoner' }
+        ]
+    },
 };
 
 // ===== モーダル表示 =====
@@ -545,4 +576,18 @@ window.onload = () => {
             pupil.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
         });
     });
+    // WIP制作中カードの背景動画自動再生
+    const wipBgVideo = document.querySelector('.wip-bg-video');
+    if (wipBgVideo) {
+        const wipObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    wipBgVideo.play();
+                } else {
+                    wipBgVideo.pause();
+                }
+            });
+        }, { threshold: 0.2 });
+        wipObserver.observe(wipBgVideo);
+    }
 };

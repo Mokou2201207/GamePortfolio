@@ -172,6 +172,37 @@
                 </div>
             </section>
 
+            <!-- 制作中作品 -->
+            <section id="wip" class="section">
+                <h2 class="section-title">▶ 制作中作品</h2>
+                <div class="wip-card pixel-box"
+                    onclick="SE_modalOpen(); openWorkModal('revive-summoner')"
+                    onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
+                    <div class="wip-badge">🔨 NOW DEVELOPING</div>
+                    <div class="wip-card-visual">
+                        <video class="wip-bg-video" src="Movie/ReviveSummoner.mp4" muted loop playsinline></video>
+                        <div class="wip-overlay">
+                            <div class="wip-overlay-content">
+                                <h3 class="wip-title">Revive Summoner</h3>
+                                <p class="wip-genre">ソーシャルRPGゲーム</p>
+                                <div class="wip-tags">
+                                    <span class="featured-tag">Unity</span>
+                                    <span class="featured-tag">C#</span>
+                                    <span class="featured-tag">スマホ</span>
+                                </div>
+                                <div class="wip-progress-section">
+                                    <div class="wip-progress-label">開発進捗</div>
+                                    <div class="wip-progress-bar">
+                                        <div class="wip-progress-fill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <video class="work-card-video" src="Movie/ReviveSummoner.mp4" muted loop playsinline></video>
+                    </div>
+                </div>
+            </section>
+
             <!-- Works Section -->
             <section id="works" class="section">
                 <h2 class="section-title">▶ 作品一覧</h2>
