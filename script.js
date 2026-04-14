@@ -147,7 +147,7 @@ const gameData = {
         links: [
             { label: 'GitHub', url: 'https://github.com/Mokou2005/EchoTrigger2' }
         ],
-        buildPath: 'https://drive.google.com/file/d/xxxxxx/view?usp=sharing' // ※ここにGoogle Drive等のZIPファイルリンクを入れます
+        buildPath: 'Build/EchoTrigger.zip'
     },
     'pearl-adventure': {
         title: '放て！パール君の大冒険！',
