@@ -146,7 +146,8 @@ const gameData = {
         techDetails: [],
         links: [
             { label: 'GitHub', url: 'https://github.com/Mokou2005/EchoTrigger2' }
-        ]
+        ],
+        buildPath: 'Build/EchoTrigerrBuild/Echo_Trigger.exe'
     },
     'pearl-adventure': {
         title: '放て！パール君の大冒険！',
@@ -406,10 +407,13 @@ const gameData = {
 };
 
 // ===== モーダル表示 =====
+let currentGameId = null;
+
 function openWorkModal(gameId) {
     const data = gameData[gameId];
     if (!data) return;
 
+    currentGameId = gameId;
     const modal = document.getElementById('work-modal');
 
     // タイトル
@@ -447,6 +451,14 @@ function openWorkModal(gameId) {
         videoSection.style.display = 'none';
         imgSection.style.display = 'block';
         document.getElementById('modal-img').src = data.thumbnail;
+    }
+
+    // プレイボタン
+    const playSection = document.getElementById('modal-play-section');
+    if (data.buildPath) {
+        playSection.style.display = 'block';
+    } else {
+        playSection.style.display = 'none';
     }
 
     // 基本情報テーブル
@@ -538,6 +550,50 @@ function closeWorkModal(event, forceClose) {
             video.pause();
             video.currentTime = 0;
         }
+    }
+}
+
+// ゲーム起動
+async function launchGame() {
+    if (!currentGameId) return;
+
+    const btn = document.getElementById('modal-play-btn');
+    const textSpan = btn.querySelector('.play-game-text');
+    const originalText = textSpan.textContent;
+
+    // ボタンを起動中状態に
+    btn.disabled = true;
+    textSpan.textContent = '起動中...';
+    btn.style.opacity = '0.7';
+
+    try {
+        const res = await fetch(`/api/launch/${currentGameId}`, { method: 'POST' });
+        const data = await res.json();
+
+        if (data.success) {
+            textSpan.textContent = '✅ 起動しました！';
+            btn.style.background = 'linear-gradient(135deg, #2196f3 0%, #1565c0 100%)';
+            setTimeout(() => {
+                textSpan.textContent = originalText;
+                btn.style.background = '';
+                btn.style.opacity = '';
+                btn.disabled = false;
+            }, 3000);
+        } else {
+            textSpan.textContent = '❌ ' + (data.error || 'エラー');
+            setTimeout(() => {
+                textSpan.textContent = originalText;
+                btn.style.opacity = '';
+                btn.disabled = false;
+            }, 3000);
+        }
+    } catch (e) {
+        textSpan.textContent = '❌ サーバーに接続できません';
+        setTimeout(() => {
+            textSpan.textContent = originalText;
+            btn.style.opacity = '';
+            btn.disabled = false;
+        }, 3000);
     }
 }
 
