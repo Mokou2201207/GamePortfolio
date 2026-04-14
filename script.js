@@ -147,7 +147,7 @@ const gameData = {
         links: [
             { label: 'GitHub', url: 'https://github.com/Mokou2005/EchoTrigger2' }
         ],
-        buildPath: 'GOOGLE_DRIVE_LINK_HERE'
+        buildPath: 'https://drive.google.com/file/d/xxxxxx/view?usp=sharing' // ※ここにGoogle Drive等のZIPファイルリンクを入れます
     },
     'pearl-adventure': {
         title: '放て！パール君の大冒険！',
@@ -407,10 +407,13 @@ const gameData = {
 };
 
 // ===== モーダル表示 =====
+let currentGameId = null;
+
 function openWorkModal(gameId) {
     const data = gameData[gameId];
     if (!data) return;
 
+    currentGameId = gameId;
     const modal = document.getElementById('work-modal');
 
     // タイトル
