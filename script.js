@@ -349,7 +349,8 @@ const gameData = {
         techDetails: [],
         links: [
             { label: 'GitHub', url: 'https://github.com/Mokou2005/SWINGBYE' }
-        ]
+        ],
+        buildPath: 'https://drive.google.com/drive/folders/1EG8Nhb5qFEMIiCo1hhCdIUsFYh0q1QLd?usp=sharing'
     },
     'udon-catcher': {
         title: 'Udon キャッチャー',
