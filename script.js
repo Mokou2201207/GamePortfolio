@@ -218,7 +218,8 @@ const gameData = {
         techDetails: [],
         links: [
             { label: 'GitHub', url: 'https://github.com/sogotoya/Orimichikun' }
-        ]
+        ],
+        buildPath: 'https://drive.google.com/drive/folders/1he23BqO26S5JN618OA-YmCl01Um8Bm6j?usp=sharing'
     },
     'genesis-maker': {
         title: 'Genesis Maker',
