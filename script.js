@@ -321,7 +321,8 @@ const gameData = {
         techDetails: [],
         links: [
             { label: 'Google Drive', url: 'https://drive.google.com/drive/folders/1-VcnB05WI8pkcEAG62UE45Im2V2kbOca?usp=sharing' }
-        ]
+        ],
+        buildPath: 'https://drive.google.com/drive/folders/12NliG4Ds5KyrGmly4Jt5V4qSLwzx3vkR?usp=sharing'
     },
     'swing-bye-bye': {
         title: 'Swing Bye Bye',
