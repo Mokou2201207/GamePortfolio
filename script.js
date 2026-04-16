@@ -257,7 +257,9 @@ const gameData = {
         techDetails: [],
         links: [
             { label: 'GitHub', url: 'https://github.com/Mokou2201207/GenesisMaker' }
-        ]
+        ],
+        buildPath: 'https://drive.google.com/drive/folders/1FkfvpWJ9E_QgoJlOrDMJHD2Z28oL3NyR?usp=sharing',
+        playNote: 'すみませんがPC用の画面になっています。'
     },
     'donut-shop': {
         title: 'ドーナツ屋さん',
@@ -459,9 +461,11 @@ function openWorkModal(gameId) {
     // プレイボタン
     const playSection = document.getElementById('modal-play-section');
     const playBtn = document.getElementById('modal-play-btn');
+    const playNote = document.getElementById('modal-play-note');
     if (data.buildPath) {
         playSection.style.display = 'block';
         playBtn.href = data.buildPath;
+        playNote.textContent = data.playNote || '';
     } else {
         playSection.style.display = 'none';
     }
