@@ -660,6 +660,7 @@ nav {
 /* プレビュー動画 */
 .modal-video-wrapper {
     width: 100%;
+    aspect-ratio: 16 / 9; /* アスペクト比を固定して崩れを防ぐ */
     margin-bottom: 25px;
     border: 3px solid var(--border-color);
     border-radius: 8px;
@@ -1355,7 +1356,7 @@ nav {
 }
 
 .featured-card-large .featured-card-img {
-    aspect-ratio: 16 / 7; /* 横長にして迫力を出す */
+    aspect-ratio: 16 / 10; /* 他のカードと合わせる */
 }
 
 .new-badge {
