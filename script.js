@@ -149,6 +149,38 @@ const gameData = {
         ],
         buildPath: 'https://drive.google.com/drive/folders/1gGOXj7AkuLEtDTStSJK0cST712K3OCzy?usp=sharing'
     },
+    'lucid-dark': {
+        title: 'Lucid Dark',
+        video: 'Movie/LucidDark.mp4',
+        thumbnail: 'Image/LucidTitle.png',
+        info: {
+            'ジャンル': '2.5D アクションホラー',
+            'プラットフォーム': 'PC (Windows)',
+            '制作人数': '1人',
+            '開発期間': '2025年4月(二週間)',
+            '開発環境': 'Unity2022 / C# / Visual Studio'
+        },
+        overview: 'この廃工場の中でアイテムを見つけ脱出するゲーム',
+        roles: ['すべて'],
+        highlights: [
+            {
+                title: '初心者や子供でも遊びやすい工夫',
+                description: 'アイテムに<span class="text-red">ハイライト</span>を入れたり、物に触れてアクションが可能な場合に<span class="text-red">操作説明がテキストで表示</span>されるようにするなど、直感的に遊べる工夫を凝らしました。'
+            },
+            {
+                title: 'ステージ区切りによる軽量化（スポーン制御）',
+                description: 'ゲーム開始時に全ての敵を出すのではなく、<span class="text-red">ステージの区切りごとにスポーン</span>させる仕組みを導入し、動作の軽量化を実現しました。'
+            },
+            {
+                title: '恐怖を煽るホラー演出のこだわり',
+                description: '<span class="text-red">フォグ</span>を活用して視界を制限し、敵が「<span class="text-red">プレイヤーが見ていない時だけ近づいてくる</span>」という挙動を実装することで、静かな恐怖と緊張感を演出しました。'
+            }
+        ],
+        challenges: [],
+        techDetails: [],
+        links: [],
+        buildPath: 'https://drive.google.com/drive/folders/1dOKVUUCY8zfcMyrtan0ptpohT7tIkUby?usp=sharing'
+    },
     'pearl-adventure': {
         title: '放て！パール君の大冒険！',
         video: 'Movie/放て！パールの大冒険！プレイ動画.mp4',

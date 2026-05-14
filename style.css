@@ -1346,6 +1346,23 @@ nav {
     }
 }
 
+/* 新作作品用 - 1カラムで大きく見せる */
+.featured-grid-large {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.featured-card-large .featured-card-img {
+    aspect-ratio: 16 / 7; /* 横長にして迫力を出す */
+}
+
+.new-badge {
+    background: linear-gradient(135deg, #00c853 0%, #64dd17 50%, #aeea00 100%) !important;
+    box-shadow: 2px 2px 8px rgba(0, 200, 83, 0.4) !important;
+}
+
 /* ========== 制作中作品 (WIP) セクション ========== */
 .wip-card {
     position: relative;
