@@ -1364,6 +1364,38 @@ nav {
     box-shadow: 2px 2px 8px rgba(0, 200, 83, 0.4) !important;
 }
 
+/* サムネイル右端ロゴ：現在自分の実力 */
+.skill-logo-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #d32f2f 0%, #f44336 50%, #ff5252 100%);
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border: 3px solid #fff;
+    border-radius: 8px;
+    box-shadow: 3px 3px 0px rgba(62, 39, 35, 0.4);
+    z-index: 5;
+    pointer-events: none;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+    transform: rotate(-3deg);
+    letter-spacing: 1px;
+    animation: logoPop 2s ease-in-out infinite;
+}
+
+@keyframes logoPop {
+    0%, 100% {
+        transform: scale(1) rotate(-3deg);
+        box-shadow: 3px 3px 0px rgba(62, 39, 35, 0.4);
+    }
+    50% {
+        transform: scale(1.05) rotate(-5deg);
+        box-shadow: 5px 5px 0px rgba(62, 39, 35, 0.4);
+    }
+}
+
 /* ========== 制作中作品 (WIP) セクション ========== */
 .wip-card {
     position: relative;
