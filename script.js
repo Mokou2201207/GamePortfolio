@@ -413,13 +413,13 @@ const gameData = {
     'revive-summoner': {
         title: 'Revive Summoner',
         video: 'Movie/ReviveSummoner.mp4',
-        thumbnail: '',
+        thumbnail: 'Image/smartphone games.png',
         info: {
             'ジャンル': 'ソーシャルRPGゲーム',
             'プラットフォーム': 'スマホ',
             'イベント': '個人製作',
             '制作人数': '1人',
-            '開発期間': '2025年3月から',
+            '開発期間': '2025年3月から2026年5月',
             '開発環境': 'Unity2022 / C# / Visual Studio',
             '受賞': '奨励賞'
         },
