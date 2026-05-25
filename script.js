@@ -413,17 +413,16 @@ const gameData = {
     'revive-summoner': {
         title: 'Revive Summoner',
         video: 'Movie/ReviveSummoner.mp4',
-        thumbnail: 'Image/smartphone games.png',
+        thumbnail: 'Image/Revive Summoner,Title.png',
         info: {
             'ジャンル': 'ソーシャルRPGゲーム',
             'プラットフォーム': 'スマホ',
             'イベント': '個人製作',
             '制作人数': '1人',
             '開発期間': '2025年3月から2026年5月',
-            '開発環境': 'Unity2022 / C# / Visual Studio',
-            '受賞': '奨励賞'
+            '開発環境': 'Unity2022 / C# / Visual Studio'
         },
-        overview: '敵の攻撃を避けて倒すゲーム！！なんと避けゲーとRPGの合体！？ダンジョンで勝っても死んでもコインがもらえてガチャを引きキャラクターを増やそう！！',
+        overview: '今回はガチャ機能を作りました！ガチャを引いてゲットしたキャラクターは実際にHome画面等で確認することができます。ゲーム部分はプレイできず、ガチャとその結果を楽しむ機能に特化して制作しました。',
         roles: ['全て'],
         highlights: [
             {
