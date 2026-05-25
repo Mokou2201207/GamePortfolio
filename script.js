@@ -440,6 +440,41 @@ const gameData = {
             { label: 'GitHub', url: 'https://github.com/Mokou2201207/ReviveSummoner' }
         ]
     },
+    'kokuzyu': {
+        title: '暗呪',
+        video: 'Movie/暗呪.mp4',
+        thumbnail: '',
+        info: {
+            'ジャンル': '3D探索アクションホラー',
+            'プラットフォーム': 'PC (Windows)',
+            '制作人数': '3人',
+            '開発期間': '2025年4月〜現在',
+            '開発環境': 'Unity2022 / C# / Visual Studio'
+        },
+        overview: '敵に捕まらないようにアイテムを探して脱出しろ、バッテリーやスタミナもしっかり注視して...',
+        roles: [
+            'プレイヤー全般（プレイヤーができることすべてアイテムの取得など）',
+            'Map配置',
+            'ステータスUIのプログラム',
+            '敵に捕まったときのプログラム＆ムービ',
+            'フォグ設定'
+        ],
+        highlights: [
+            {
+                title: '没入感を高めるUIと視覚演出',
+                description: 'プレイヤーから見た目線、パラメータの演出を工夫しました。ステータスで<span class="text-red">走り疲れた時視界が暗くなったり、息を荒くしたり</span>など、ユーザーがゲージの把握をしやすくするため、<span class="text-red">ゲージが少なくなってきたら赤く変える</span>などの工夫を凝らしました。'
+            },
+            {
+                title: '保守性の高い設計（使いまわしやすさ）',
+                description: '<span class="text-red">使いまわしができる設計</span>を意識し、アイテムの入手などを<span class="text-red">ひとつのscriptをアタッチするだけで</span>入手まで完結できる設計にしています。'
+            }
+        ],
+        challenges: [],
+        techDetails: [],
+        links: [
+            { label: 'GitHub', url: 'https://github.com/Mokou2201207/Kokuzyu' }
+        ]
+    },
 };
 
 // ===== モーダル表示 =====
