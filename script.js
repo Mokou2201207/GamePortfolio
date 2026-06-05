@@ -442,7 +442,7 @@ const gameData = {
     },
     'kokuzyu': {
         title: '暗呪',
-        video: 'Movie/暗呪.mp4',
+        video: 'Movie/暗呪.mp4?v=2',
         thumbnail: '',
         info: {
             'ジャンル': '3D探索オンラインアクションホラー',
