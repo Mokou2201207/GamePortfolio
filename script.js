@@ -442,7 +442,7 @@ const gameData = {
     },
     'kokuzyu': {
         title: '暗呪',
-        video: 'Movie/暗呪.mp4?v=2',
+        video: 'Movie/Kokuzyu.mp4',
         thumbnail: '',
         info: {
             'ジャンル': '3D探索オンラインアクションホラー',
@@ -458,7 +458,16 @@ const gameData = {
             'ステータスUIのプログラム',
             '敵に捕まったときのプログラム＆ムービ',
             'フォグ設定',
-            'オンライン化'
+            'オンライン化',
+            'タイトル',
+            'チュートリアル',
+            'ロビー制作',
+            'アイテムインベントリー',
+            'アイテムの効果全般',
+            '死んだときのcharacterの死亡シーン',
+            'UI系全般',
+            '電車修理',
+            '電気の点滅'
         ],
         highlights: [
             {
@@ -473,7 +482,7 @@ const gameData = {
         challenges: [],
         techDetails: [],
         links: [
-            { label: 'GitHub', url: 'https://github.com/Mokou2201207/Kokuzyu' }
+            { label: 'GitHub', url: 'https://mokou2201207.github.io/GamePortfolio/' }
         ]
     },
 };
