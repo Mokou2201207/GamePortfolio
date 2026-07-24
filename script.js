@@ -441,8 +441,9 @@ const gameData = {
         ]
     },
     'kokuzyu': {
-        title: '暗呪',
+        title: '黒呪',
         video: 'Movie/Kokuzyu.mp4',
+        buildPath: 'https://drive.google.com/drive/folders/1-hv7nWgcfrSYguUcpuFAfKMcCNnI3S3N?usp=sharing',
         thumbnail: '',
         info: {
             'ジャンル': '3D探索オンラインアクションホラー',
@@ -453,6 +454,7 @@ const gameData = {
         },
         overview: '敵に捕まらないようにアイテムを探して脱出しろ、バッテリーやスタミナもしっかり注視して...',
         roles: [
+            'チュートリアル全般',
             'プレイヤー全般（プレイヤーができることすべてアイテムの取得など）',
             'Map配置',
             'ステータスUIのプログラム',
@@ -460,7 +462,6 @@ const gameData = {
             'フォグ設定',
             'オンライン化',
             'タイトル',
-            'チュートリアル',
             'ロビー制作',
             'アイテムインベントリー',
             'アイテムの効果全般',
@@ -471,18 +472,26 @@ const gameData = {
         ],
         highlights: [
             {
-                title: '没入感を高めるUIと視覚演出',
-                description: 'プレイヤーから見た目線、パラメータの演出を工夫しました。ステータスで<span class="text-red">走り疲れた時視界が暗くなったり、息を荒くしたり</span>など、ユーザーがゲージの把握をしやすくするため、<span class="text-red">ゲージが少なくなってきたら赤く変える</span>などの工夫を凝らしました。'
+                title: '直感的に理解できる体験型チュートリアル設計',
+                description: 'ユーザーが迷わず操作を習得できるよう、<span class="text-red">文字説明だけでなく動画を活用した視覚的な解説</span>を取り入れました。さらに、操作が成功すると<span class="text-red">メーターが溜まって次のステップへ進む進行フィードバック</span>を実装し、ストレスなく楽しめる工夫を施しています。'
             },
             {
-                title: '保守性の高い設計（使いまわしやすさ）',
-                description: '<span class="text-red">使いまわしができる設計</span>を意識し、アイテムの入手などを<span class="text-red">ひとつのscriptをアタッチするだけで</span>入手まで完結できる設計にしています。'
+                title: 'マルチプレイを盛り上げる「見て面白い」物理演出',
+                description: '単に恐怖を与えるだけでなく、オンラインで他プレイヤーを観察する面白さを追求しました。プレイヤー死亡時には<span class="text-red">ラグドール物理（脱力演出）</span>を適用し、他プレイヤー視点で<span class="text-red">思わずクスッと笑えて場が和むようなユーザー体験</span>を設計しています。'
+            },
+            {
+                title: '没入感を高めるUIと視覚演出',
+                description: 'プレイヤー目線でのパラメータ演出を工夫しました。ステータスで<span class="text-red">走り疲れた時に視界が暗くなったり息が荒くなったりする演出</span>を導入し、<span class="text-red">残量が減るとゲージ色が赤く変化する</span>ことで直感的に状態を把握できるようにしました。'
+            },
+            {
+                title: '保守性の高い設計（再利用性の追求）',
+                description: '<span class="text-red">再利用可能な設計</span>を意識し、アイテム入手などの処理を<span class="text-red">1つのスクリプトをアタッチするだけで完結できるコンポーネント指向</span>で制作しています。'
             }
         ],
         challenges: [],
         techDetails: [],
         links: [
-            { label: 'GitHub', url: 'https://mokou2201207.github.io/GamePortfolio/' }
+            { label: 'Google Drive（ゲーム本体）', url: 'https://drive.google.com/drive/folders/1-hv7nWgcfrSYguUcpuFAfKMcCNnI3S3N?usp=sharing' }
         ]
     },
 };
