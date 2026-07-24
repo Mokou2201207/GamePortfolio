@@ -491,6 +491,7 @@ const gameData = {
         challenges: [],
         techDetails: [],
         links: [
+            { label: 'GitHub', url: 'https://github.com/Mokou2201207/Kokuzyu' },
             { label: 'Google Drive（ゲーム本体）', url: 'https://drive.google.com/drive/folders/1-hv7nWgcfrSYguUcpuFAfKMcCNnI3S3N?usp=sharing' }
         ]
     },

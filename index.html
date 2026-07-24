@@ -120,44 +120,40 @@
                     もっと見る</button>
             </section>
 
-            <!-- 制作中作品 -->
-            <section id="wip" class="section">
-                <h2 class="section-title">▶ 制作中作品</h2>
-                <div class="wip-card pixel-box"
-                    onclick="SE_modalOpen(); openWorkModal('kokuzyu')"
-                    onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
-                    <div class="wip-badge">🔨 NOW DEVELOPING</div>
-                    <div class="wip-card-visual">
-                        <video class="wip-bg-video" src="Movie/Kokuzyu.mp4" muted loop playsinline></video>
-                        <div class="wip-overlay">
-                            <div class="wip-overlay-content">
-                                <h3 class="wip-title">黒呪</h3>
-                                <p class="wip-genre">3D探索オンラインアクションホラー</p>
-                                <div class="wip-tags">
-                                    <span class="featured-tag">Unity</span>
-                                    <span class="featured-tag">C#</span>
-                                    <span class="featured-tag">PC</span>
-                                </div>
-                                <div class="wip-progress-section">
-                                    <div class="wip-progress-label">開発進捗</div>
-                                    <div class="wip-progress-bar">
-                                        <div class="wip-progress-fill"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <video class="work-card-video" src="Movie/Kokuzyu.mp4" muted loop playsinline></video>
-                    </div>
-                </div>
-            </section>
-
             <!-- 新作作品 -->
             <section id="new-works" class="section">
                 <h2 class="section-title">▶ 新作作品</h2>
                 <div class="featured-grid-large">
-                    <div class="featured-card featured-card-large pixel-box" onclick="SE_modalOpen(); openWorkModal('lucid-dark')"
+                    <div class="featured-card featured-card-large pixel-box" onclick="SE_modalOpen(); openWorkModal('kokuzyu')"
                         onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
                         <div class="featured-badge new-badge">🆕 NEW RELEASE</div>
+                        <div class="featured-card-img">
+                            <video class="work-card-video" src="Movie/Kokuzyu.mp4" muted loop playsinline></video>
+                            <div class="featured-card-overlay">
+                                <span class="featured-play-icon">▶</span>
+                                <span>くわしく見る</span>
+                            </div>
+                        </div>
+                        <div class="featured-card-info">
+                            <h3 class="featured-card-title">黒呪</h3>
+                            <p class="featured-card-genre">3D探索オンラインアクションホラー</p>
+                            <div class="featured-card-tags">
+                                <span class="featured-tag">Unity</span>
+                                <span class="featured-tag">C#</span>
+                                <span class="featured-tag">PC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 注目作品 -->
+            <section id="featured" class="section">
+                <h2 class="section-title">▶ 注目作品</h2>
+                <div class="featured-grid-large">
+                    <div class="featured-card featured-card-large pixel-box" onclick="SE_modalOpen(); openWorkModal('lucid-dark')"
+                        onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
+                        <div class="featured-badge">⭐ PICK UP</div>
                         <div class="featured-card-img">
                             <img src="Image/LucidTitle.png" alt="Lucid Dark">
                             <video class="work-card-video" src="Movie/LucidDark.mp4" muted loop
@@ -175,35 +171,6 @@
                                 <span class="featured-tag">Unity</span>
                                 <span class="featured-tag">C#</span>
                                 <span class="featured-tag">PC</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 注目作品 -->
-            <section id="featured" class="section">
-                <h2 class="section-title">▶ 注目作品</h2>
-                <div class="featured-grid-large">
-                    <div class="featured-card featured-card-large pixel-box" onclick="SE_modalOpen(); openWorkModal('green-kun')"
-                        onmouseenter="SE_cardHover(); playCardVideo(this)" onmouseleave="stopCardVideo(this)">
-                        <div class="featured-badge">⭐ PICK UP</div>
-                        <div class="featured-card-img">
-                            <img src="Image/PC and smartphone games.png" alt="とびだせ！グリーンくん">
-                            <video class="work-card-video" src="Movie/orimitikun.mp4" muted loop
-                                playsinline></video>
-                            <div class="featured-card-overlay">
-                                <span class="featured-play-icon">▶</span>
-                                <span>くわしく見る</span>
-                            </div>
-                        </div>
-                        <div class="featured-card-info">
-                            <h3 class="featured-card-title">とびだせ！グリーンくん</h3>
-                            <p class="featured-card-genre">2Dアクションゲーム</p>
-                            <div class="featured-card-tags">
-                                <span class="featured-tag">Unity</span>
-                                <span class="featured-tag">C#</span>
-                                <span class="featured-tag">PC / スマホ</span>
                             </div>
                         </div>
                     </div>
