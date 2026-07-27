@@ -146,8 +146,7 @@ const gameData = {
         techDetails: [],
         links: [
             { label: 'GitHub', url: 'https://github.com/Mokou2005/EchoTrigger2' }
-        ],
-        buildPath: 'https://drive.google.com/drive/folders/1gGOXj7AkuLEtDTStSJK0cST712K3OCzy?usp=sharing'
+        ]
     },
     'lucid-dark': {
         title: 'Lucid Dark',
