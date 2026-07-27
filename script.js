@@ -444,12 +444,12 @@ const gameData = {
         title: '黒呪',
         video: 'Movie/Kokuzyu.mp4',
         buildPath: 'https://drive.google.com/drive/folders/1-hv7nWgcfrSYguUcpuFAfKMcCNnI3S3N?usp=sharing',
-        thumbnail: '',
+        thumbnail: 'Image/暗呪サムネイル.png',
         info: {
             'ジャンル': '3D探索オンラインアクションホラー',
             'プラットフォーム': 'PC (Windows)',
             '制作人数': '3人',
-            '開発期間': '2025年4月〜現在',
+            '開発期間': '2025年4月〜2025年7月',
             '開発環境': 'Unity2022 / C# / Visual Studio'
         },
         overview: '敵に捕まらないようにアイテムを探して脱出しろ、バッテリーやスタミナもしっかり注視して...',
